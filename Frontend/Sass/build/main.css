@@ -20,14 +20,22 @@
   display: flex;
   gap: 8px;
 }
-.header__nav__link {
+.header__link {
   text-decoration: none;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ff0000;
+  font-size: 25px;
 }
-.header__nav__link a {
+.header__link a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
   color: #ff0000;
 }
-
+.header__nav__link a:link, .header__nav__link a:visited {
+  color: #00ffb3;
+}
 .main-image {
   position: relative;
   width: 100%;
@@ -100,6 +108,11 @@
 .footer__socials__social-icon {
   width: 25px;
   height: 25px;
+}
+.footer a {
+  text-decoration : none;
+  color: white;
+  
 }
 
 @media (min-width: 768px) {
