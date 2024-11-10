@@ -65,7 +65,6 @@
   font-size: 24px;
 }
 .cartelera__images {
-
   display: grid;
   gap: 8px;
   grid-template-columns: 1fr 1fr;
