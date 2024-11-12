@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+a{
+  text-decoration: none;
+}
+
 body {
   background-image: url("../../Images/imgfondo.jpg");
   background-size: cover;
@@ -31,12 +35,11 @@ body {
   display: flex;
   gap: 8px;
 }
-.header__nav__link {
+.header__link {
   text-decoration: none;
   font-weight: bold;
-}
-.header__nav__link a {
   color: #ff0000;
+  font-size: x-large;
 }
 
 main {
@@ -81,6 +84,11 @@ main {
   text-align: center;
   background-color: rgb(32, 95, 82);
 }
+
+.footer__text a{
+  text-decoration: none;
+  color: white;
+}
 .footer__text {
   display: flex;
   justify-content: center;
@@ -114,10 +122,10 @@ main {
     width: 65%;
   }
   .main-section__text {
-    font-size: 20px;
+    font-size: 18px;
   }
   .main-section__quote {
-    font-size: 36px;
+    font-size: 2px;
   }
   .footer__text {
     gap: 16px;
@@ -140,9 +148,11 @@ main {
     max-width: 800px;
   }
   .main-section__text {
-    font-size: xx-large;
+    font-size: 25px;
   }
   .main-section__quote {
-    font-size: 80px;
+    font-size: 50px;
   }
-}/*# sourceMappingURL=aboutUs.css.map */
+}
+
+/*# sourceMappingURL=aboutUs.css.map */

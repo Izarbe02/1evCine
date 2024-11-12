@@ -10,7 +10,6 @@
   padding: 16px;
   background-color: #000000;
 }
-
 .header__logo {
   height: 85px;
 }
@@ -30,41 +29,32 @@ body {
   height: 100%;
   padding: 20px;
 }
-
 .main-section__title {
-  margin-top: 30px;
   color: #ff0000;
-  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.952);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   border: 2px solid #ff0000;
-  background-color: rgba(0, 0, 0, 0.87);
   padding: 10px;
 }
-
 .main-section__text {
-  margin-top: 40px;
-  width: 65%;
-  background-color: rgba(0, 0, 0, 0.79);
-  color: #ff0000;
-  margin-bottom: 80px;
-  padding: 15px;
-  border: 2px solid #ff0000;
+  color: #000;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  padding: 10px;
 }
 
 .main-lower__button {
   padding: 8px 16px;
-  background-color: rgba(0, 0, 0, 0.91);
+  background-color: #000;
   color: #ff0000;
   border: 2px solid #ff0000;
   cursor: pointer;
-  margin-top: 60px;
 }
 
 .footer {
   padding: 16px;
   text-align: center;
-  background-color: #205f52;
-  margin-top: 80px;
-  bottom: 0px;
+  background-color: rgb(32, 95, 82);
 }
 
 @media (min-width: 768px) {
@@ -84,7 +74,6 @@ body {
     font-size: 16px;
   }
 }
-
 @media (min-width: 1024px) {
   .main-section {
     padding: 60px;
@@ -96,3 +85,5 @@ body {
     font-size: 20px;
   }
 }
+
+/*# sourceMappingURL=compraFinalizada.css.map */
