@@ -10,7 +10,6 @@
   padding: 16px;
   background-color: #000000;
 }
-
 .header__logo {
   height: 85px;
 }
@@ -30,7 +29,6 @@ body {
   height: 100%;
   padding: 20px;
 }
-
 .main-section__title {
   margin-top: 30px;
   color: #ff0000;
@@ -39,7 +37,6 @@ body {
   background-color: rgba(0, 0, 0, 0.87);
   padding: 10px;
 }
-
 .main-section__text {
   margin-top: 40px;
   width: 65%;
@@ -62,7 +59,7 @@ body {
 .footer {
   padding: 16px;
   text-align: center;
-  background-color: #205f52;
+  background-color: rgb(32, 95, 82);
   margin-top: 80px;
   bottom: 0px;
 }
@@ -84,7 +81,6 @@ body {
     font-size: 16px;
   }
 }
-
 @media (min-width: 1024px) {
   .main-section {
     padding: 60px;
@@ -95,4 +91,4 @@ body {
   .main-section__text {
     font-size: 20px;
   }
-}
+}/*# sourceMappingURL=compraFinalizada.css.map */
