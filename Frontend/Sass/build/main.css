@@ -36,6 +36,7 @@
 .header__nav__link a:link, .header__nav__link a:visited {
   color: #00ffb3;
 }
+
 .main-image {
   position: relative;
   width: 100%;
@@ -76,11 +77,10 @@
   object-position: center;
   transition: all 0.3s ease;
 }
-
 .cartelera__image:hover {
   transform: scale(1.1);
   border: 3px solid #ff0000;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .cartelera__button-container {
   margin-top: 16px;
@@ -88,7 +88,7 @@
 }
 .cartelera__button {
   padding: 8px 16px;
-  background-color: #000;
+  background-color: #000000;
   color: #ff0000;
   border: 2px solid #ff0000;
   cursor: pointer;
@@ -119,9 +119,8 @@
   height: 25px;
 }
 .footer a {
-  text-decoration : none;
-  color: white;
-
+  text-decoration: none;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {

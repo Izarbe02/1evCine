@@ -1,32 +1,29 @@
-//sass source/main.scss build/main.css
-
-
 // Variables de color y fuente
 $color-bg: #000000;
 $color-text: #ff0000;
 $color-secondary-bg: #111;
-$color-button-bg: #000000; 
-$color-button-text: #ff0000; 
-$color-button-border: #ff0000; 
+$color-button-bg: #000000;
+$color-button-text: #ff0000;
+$color-button-border: #ff0000;
+$color-link-hover: #00ffb3;
+$color-footer-bg: rgb(32, 95, 82);
+$color-white: #ffffff;
 $title-font: "Poppins", sans-serif;
-$text-font: "Patua One", serif;
 
 @mixin primary-font {
   font-family: $title-font;
-
 }
 
 * {
-  background-color: red($color: #ff0000);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  @include primary-font; 
+  @include primary-font;
 }
 
 // Header
 .header {
-    color: $color-text;
+  color: $color-text;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,23 +31,29 @@ $text-font: "Patua One", serif;
   background-color: $color-bg;
 
   &__logo {
-    height: 85px;
+    height: 90px;
   }
 
   &__nav {
     display: flex;
     gap: 8px;
+  }
 
-    &__link {
-    
+  &__link {
+    text-decoration: none;
+    font-weight: bold;
+    @include primary-font;
+    color: $color-text;
+    font-size: 25px;
+
+    a {
       text-decoration: none;
       font-weight: bold;
-
-     a{
-        color: $color-text;
+      @include primary-font;
+      color: $color-text;
     }
+  
   }
-}
 }
 
 // Imagen Principal
@@ -72,11 +75,10 @@ $text-font: "Patua One", serif;
     padding: 8px;
     font-size: 16px;
     font-weight: bold;
-    
   }
 }
 
-//Cartelera
+// Cartelera
 .cartelera {
   padding: 16px;
   background-color: $color-secondary-bg;
@@ -91,55 +93,69 @@ $text-font: "Patua One", serif;
     display: grid;
     gap: 8px;
     grid-template-columns: 1fr 1fr;
+  }
 
-    &__image {
-      width: 50%;
-      height: auto;
+  &__image {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      border: 3px solid $color-text;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
   }
 
   &__button-container {
     margin-top: 16px;
     text-align: left;
-    &__button {
-        padding: 8px 16px;
-        background-color: #ff0000;
-        color: $color-button-text; 
-        border: 2px solid #ff0000; 
-        cursor: pointer;
-        font-family: $title-font; 
-      }
+  }
+
+  &__button {
+    padding: 8px 16px;
+    background-color: $color-button-bg;
+    color: $color-button-text;
+    border: 2px solid $color-button-border;
+    cursor: pointer;
+    @include primary-font;
   }
 }
 
 // Footer
-
 .footer {
-    padding: 16px;
-    text-align: center;
-    background-color: rgb(32, 95, 82);
-  
-    &__text {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-      font-size: 14px;
-      color: #ffffff; 
-    }
-  
-    &__socials {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-  
-      &__social-icon {
-        width: 25px;
-        height: 25px;
-      }
+  padding: 16px;
+  text-align: center;
+  background-color: $color-footer-bg;
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: $color-white;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    &__social-icon {
+      width: 25px;
+      height: 25px;
     }
   }
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
+}
 
 // Media Queries
 @media (min-width: 768px) {
@@ -191,9 +207,7 @@ $text-font: "Patua One", serif;
     font-size: 32px;
   }
 
-  .cartelera {
-    &__title {
-      font-size: 32px;
-    }
+  .cartelera__title {
+    font-size: 32px;
   }
 }

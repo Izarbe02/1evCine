@@ -34,3 +34,10 @@ COMPRA FINALIZADA
 *cuadro texto rojo
 *media query titulo en movil color negro
 -bajar opacidad cuadro negro
+
+cuadrar sass
+
+---//main
+****//aboutUs
+**//cartelera
+//compraFinalizada
