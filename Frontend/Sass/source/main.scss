@@ -1,3 +1,6 @@
+//sass source/main.scss build/main.css
+
+
 // Variables de color y fuente
 $color-bg: #000000;
 $color-text: #ff0000;
@@ -14,6 +17,7 @@ $text-font: "Patua One", serif;
 }
 
 * {
+  background-color: red($color: #ff0000);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,7 +34,7 @@ $text-font: "Patua One", serif;
   background-color: $color-bg;
 
   &__logo {
-    height: 70px;
+    height: 85px;
   }
 
   &__nav {
@@ -99,7 +103,7 @@ $text-font: "Patua One", serif;
     text-align: left;
     &__button {
         padding: 8px 16px;
-        background-color: #000;
+        background-color: #ff0000;
         color: $color-button-text; 
         border: 2px solid #ff0000; 
         cursor: pointer;
