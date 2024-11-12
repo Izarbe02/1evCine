@@ -80,7 +80,7 @@ body {
 .footer a {
     text-decoration : none;
     color: $white;  
-}
+} 
 
 .main {
     padding: 20px; 
@@ -89,7 +89,7 @@ body {
         font-size:40px;
         text-align: center; 
         margin-bottom: 30px; 
-        color:rgb(78, 219, 191); 
+        color:rgb(255, 0, 0); 
         text-shadow: 2px 2px 5px $shadow-color; 
     }
 }
@@ -125,7 +125,7 @@ body {
        display:block; 
        margin-top: 20px; 
        text-align:center; 
-       background-color: $secondary-color; 
+       background-color: rgba(0, 0, 0, 0.856); 
        color: $primary-color; 
        border-radius : 5px; 
        border-width :2px ;
@@ -146,6 +146,11 @@ body {
 
 // Media Queries
 @media (min-width: 768px) {
+    .main__title {
+        margin-bottom: 30px;
+        color: rgb(0, 0, 0);
+        text-shadow: 2px 2px 5px rgb(97, 0, 0); 
+    }
    .movie-grid {
        grid-template-columns: repeat(2, 1fr); 
 
@@ -156,10 +161,12 @@ body {
        .footer__text { gap: 16px; }
 
        .footer__socials { gap: 16px; }
+        }
    }
-}
+
 
 @media (min-width: 1024px) { 
+    
    .movie-grid { 
        grid-template-columns: repeat(3, 1fr); 
 

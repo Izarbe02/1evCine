@@ -11,7 +11,7 @@
   background-color: #000000;
 }
 .header__logo {
-  height: 85px;
+  height: 80px;
 }
 
 body {
@@ -80,6 +80,7 @@ body {
   }
   .main-section__title {
     font-size: 32px;
+    background-color: rgba(0, 0, 0, 0.8274509804);
   }
   .main-section__text {
     font-size: 20px;
