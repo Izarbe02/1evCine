@@ -1,0 +1,113 @@
+// Variables
+$primary-color: #ff0000;
+$secondary-color: #000000;
+$footer-bg-color: rgb(32, 95, 82);
+$white: white;
+$black: #000;
+
+// Mixin para bordes
+@mixin border($color, $width) {
+    border: $width solid $color;
+}
+
+// Mixin para transiciones
+@mixin transition($property, $duration) {
+    transition: $property $duration ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    align-items: center;
+    padding: 16px;
+    background-color: $secondary-color;
+
+    &__logo {
+        height: 80px;
+    }
+}
+
+body {
+    background-image: url('../../Images/imgfondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100%; 
+    padding: 20px; 
+
+    &__title {
+        color: $primary-color; 
+        margin-bottom: 20px; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        @include border($primary-color, 2px); 
+        padding: 10px;
+    }
+
+    &__text {
+        color: $black; 
+        margin-bottom: 20px; 
+        @include border($black, 2px); 
+        padding: 10px; 
+    }
+}
+
+.main-lower__button {
+    padding: 8px 16px; 
+    background-color: $black; 
+    color: $primary-color; 
+    @include border($primary-color, 2px); 
+    cursor: pointer; 
+}
+
+.footer {
+    padding: 16px;
+    text-align: center;
+    background-color: $footer-bg-color;
+}
+
+@media (min-width: 768px) {
+    .main-section {
+        padding: 40px; 
+
+        &__title {
+            font-size: 28px; 
+            margin-bottom: 30px;
+        }
+
+        &__text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .main-lower__button {
+            padding: 10px 20px; 
+            font-size: 16px; 
+        }
+    }
+}
+
+@media (min-width: 1024px) { 
+    .main-section {
+        padding: 60px;
+
+        &__title {
+            font-size: 32px; 
+        }
+
+        &__text {
+            font-size: 20px; 
+        }
+    }
+}
