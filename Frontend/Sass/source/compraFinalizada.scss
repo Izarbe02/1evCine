@@ -28,7 +28,7 @@ $black: #000;
     background-color: $secondary-color;
 
     &__logo {
-        height: 80px;
+        height: 85px; // Ajustado a 85px como en el CSS original
     }
 }
 
@@ -48,33 +48,40 @@ body {
     padding: 20px; 
 
     &__title {
+        margin-top: 30px; // Ajustado a 30px como en el CSS original
         color: $primary-color; 
-        margin-bottom: 20px; 
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.952);
         @include border($primary-color, 2px); 
+        background-color: rgba(0, 0, 0, 0.87); // Ajustado a #000000de
         padding: 10px;
     }
 
     &__text {
-        color: $black; 
-        margin-bottom: 20px; 
-        @include border($black, 2px); 
-        padding: 10px; 
+        margin-top: 40px; // Ajustado a 40px como en el CSS original
+        width: 65%;
+        background-color: rgba(0, 0, 0, 0.79); // Ajustado a #000000c9
+        color: $primary-color; 
+        margin-bottom: 80px; 
+        padding: 15px; // Se mantiene el padding original
+        @include border($primary-color, 2px); 
     }
 }
 
 .main-lower__button {
     padding: 8px 16px; 
-    background-color: $black; 
+    background-color: rgba(0, 0, 0, 0.91); // Ajustado a #000000e7
     color: $primary-color; 
     @include border($primary-color, 2px); 
     cursor: pointer; 
+    margin-top: 60px; // Se mantiene el margin-top original
 }
 
 .footer {
     padding: 16px;
     text-align: center;
     background-color: $footer-bg-color;
+    margin-top: 80px; // Se mantiene el margin-top original
+    bottom: 0px; // Se mantiene el bottom original
 }
 
 @media (min-width: 768px) {
