@@ -37,6 +37,7 @@ body {
   padding: 10px;
 }
 .main-section__text {
+  width: 55%;
   color: #ff0000;
   margin-bottom: 20px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
