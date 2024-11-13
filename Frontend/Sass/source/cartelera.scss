@@ -25,6 +25,7 @@ body {
     background-attachment: fixed;
 }
 
+// Header
 .header {
     color: $primary-color;
     display: flex;
@@ -34,18 +35,24 @@ body {
     background-color: $secondary-color;
 
     &__logo {
-        height: 85px;
+        height: 60px;
     }
 
     &__nav {
         display: flex;
-        gap: 15px;
+        gap: 8px;
+    }
 
-        &-link {
+    &__link {
+        text-decoration: none;
+        font-weight: bold;
+        color: $primary-color;
+        font-size: 16px;
+
+        a {
             text-decoration: none;
             font-weight: bold;
             color: $primary-color;
-            font-size: 20px;
         }
     }
 }
@@ -63,16 +70,16 @@ body {
         margin-bottom: 16px;
         font-size: 14px;
         color: $white;
+    }
 
-        &__socials {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
+    &__socials {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
 
-            &__social-icon {
-                width: 25px;
-                height: 25px;
-            }
+        &__social-icon {
+            width: 25px;
+            height: 25px;
         }
     }
 }
@@ -94,7 +101,6 @@ body {
         color:rgb(255, 0, 0); 
         text-shadow: 2px 2px 5px $shadow-color; 
         width: 100%;
-      
     }
 }
 
@@ -137,9 +143,7 @@ body {
        border-style : solid ;
        border-color : $primary-color ;
        padding: 10px 20px;
-
        text-decoration: none; 
-
        @include transition(all, 0.3s); 
 
        &:hover {
@@ -156,27 +160,41 @@ body {
         margin-bottom: 30px;
         text-shadow: 2px 2px 5px rgb(97, 0, 0); 
     }
-   .movie-grid {
-       grid-template-columns: repeat(2, 1fr); 
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .header { 
+        padding: 24px; 
 
-       .header { padding: 24px; }
-
-       .header__nav { gap: 16px; }
-
-       .footer__text { gap: 16px; }
-
-       .footer__socials { gap: 16px; }
+        &__logo {
+            height: 90px;
         }
-   }
 
+        &__nav { 
+            gap: 16px; 
+        }
+
+        &__link {
+            font-size: 27px;
+        }
+    }
+    .footer__text { 
+        gap: 16px; 
+    }
+    .footer__socials { 
+        gap: 16px; 
+    }
+}
 
 @media (min-width: 1024px) { 
-    
-   .movie-grid { 
-       grid-template-columns: repeat(3, 1fr); 
+    .movie-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .header { 
+        padding: 32px; 
 
-       .header { padding: 32px; }
-
-       .header__nav { gap: 24px; }
-   }
+        &__nav { 
+            gap: 24px; 
+        }
+    }
 }

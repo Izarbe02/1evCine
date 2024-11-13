@@ -1,3 +1,4 @@
+// Variables de color y fuente
 $color-bg: #000000;
 $color-text: #ff0000;
 $color-secondary-bg: #111;
@@ -9,29 +10,28 @@ $color-footer-bg: rgb(32, 95, 82);
 $color-white: #ffffff;
 $title-font: "Poppins", sans-serif;
 
-*{
+* {
     font-family: $title-font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
+body {
+    font-family: Arial, sans-serif;
+    background: url('../../Images/imgfondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: $color-white;
+}
 
 .header {
     align-items: center;
     padding: 16px;
-    background-color: black;
+    background-color: $color-bg;
 
     &__logo {
         height: 80px;
     }
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('../../Images/imgfondo.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
 }
 
 .checkout {
@@ -45,9 +45,10 @@ body {
         font-size: 36px;
         font-weight: bold;
         margin-bottom: 13px;
-        color: red;
-        border: solid red($color: #ff0000);
+        color: $color-text;
+        border: solid $color-text;
         background-color: rgba(0, 0, 0, 0.781);
+        padding: 10px;
     }
 
     &__content {
@@ -64,33 +65,29 @@ body {
         }
     }
 
-    &__order {
-        background-color: rgb(196, 247, 242);
+    &__order, &__payment-methods {
         padding: 20px;
         border-radius: 10px;
         width: 100%;
-        border: 10px solid #2a6b5b;
-        color: rgb(5, 49, 38);
 
         @media (min-width: 768px) {
             width: 300px;
         }
+    }
+
+    &__order {
+        background-color: rgb(196, 247, 242);
+        border: 10px solid #2a6b5b;
+        color: rgb(5, 49, 38);
     }
 
     &__payment-methods {
         background-color: #2a6b5b;
-        padding: 20px;
-        border-radius: 10px;
-        width: 100%;
-        border: 5px solid white;
-
-        @media (min-width: 768px) {
-            width: 300px;
-        }
+        border: 5px solid $color-white;
     }
 
     &__order-title, &__payment-methods-title {
-        color: red;
+        color: $color-text;
         margin-bottom: 20px;
     }
 
@@ -101,40 +98,31 @@ body {
     &__total {
         font-size: 24px;
         font-weight: bold;
-        color: red;
+        color: $color-text;
     }
 
     &__confirm-button {
         margin-top: 20px;
         padding: 10px 20px;
         background-color: rgba(0, 0, 0, 0.849);
-        color: rgb(255, 0, 0);
-        border-color: solid red;
-        border-radius: 5px;
+        color: $color-text;
+        border: 2px solid $color-text;
         font-size: 18px;
         cursor: pointer;
-    }
 
         &:hover {
-            background-color: rgb(255, 2, 2);
-            color: black;
+            background-color: $color-text;
+            color: $color-bg;
         }
-    
+    }
 
     &__payment-methods-label {
         display: flex;
         align-items: center;
         margin-bottom: 10px;
-
-        &:hover{
-
-            background-color: red($color: #000000);
-        }
     }
-
 
     &__payment-methods-input {
-        margin-right: 1px;
+        margin-right: 10px;
     }
-
 }

@@ -21,17 +21,22 @@ body {
   background-color: #000000;
 }
 .header__logo {
-  height: 85px;
+  height: 60px;
 }
 .header__nav {
   display: flex;
-  gap: 15px;
+  gap: 8px;
 }
-.header__nav-link {
+.header__link {
   text-decoration: none;
   font-weight: bold;
   color: #ff0000;
-  font-size: 20px;
+  font-size: 16px;
+}
+.header__link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff0000;
 }
 
 .footer {
@@ -48,12 +53,12 @@ body {
   font-size: 14px;
   color: white;
 }
-.footer__text__socials {
+.footer__socials {
   display: flex;
   justify-content: center;
   gap: 8px;
 }
-.footer__text__socials__social-icon {
+.footer__socials__social-icon {
   width: 25px;
   height: 25px;
 }
@@ -130,16 +135,22 @@ body {
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .movie-grid .header {
+  .header {
     padding: 24px;
   }
-  .movie-grid .header__nav {
+  .header__logo {
+    height: 90px;
+  }
+  .header__nav {
     gap: 16px;
   }
-  .movie-grid .footer__text {
+  .header__link {
+    font-size: 27px;
+  }
+  .footer__text {
     gap: 16px;
   }
-  .movie-grid .footer__socials {
+  .footer__socials {
     gap: 16px;
   }
 }
@@ -147,10 +158,10 @@ body {
   .movie-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .movie-grid .header {
+  .header {
     padding: 32px;
   }
-  .movie-grid .header__nav {
+  .header__nav {
     gap: 24px;
   }
 }
