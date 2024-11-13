@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const peliculasContainer = document.querySelector(".movie-grid");
+    const HomePeliculas = document.querySelector(".cartelera__images");
 
     fetch("https://localhost:7141/api/Pelicula")
         .then(response => {
@@ -8,15 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return response.json();
         })
+
+        
+        
         .then(peliculas => {
-            peliculas.forEach(Pelicula => {
-                const movieItem = document.createElement("div");
-                movieItem.classList.add("movie-grid__item"); 
+            peliculas.slice(0, 4).forEach(Pelicula => {
+                const movieItem = document.createElement("a");
+                movieItem.href= "../Html/cartelera.html"
                 movieItem.innerHTML = `
-                <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="movie-grid__image">
-                <a href="#" class="movie-grid__button">SABER MÁS</a>
+                <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="cartelera__image">
                 `;
-                peliculasContainer.appendChild(movieItem);
+                HomePeliculas.appendChild(movieItem);
 
             });
         })
@@ -25,4 +27,3 @@ document.addEventListener("DOMContentLoaded", function () {
             peliculasContainer.innerHTML = "<p>Error al cargar las películas</p>";
         });
 });
-
