@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return response.json();
         })
+
+        
         .then(peliculas => {
             peliculas.slice(0, 4).forEach(Pelicula => {
-                const movieItem = document.createElement("div");
-                movieItem.classList.add("pelicula"); 
+                const movieItem = document.createElement("a");
+                movieItem.href= "../Html/cartelera.html"
                 movieItem.innerHTML = `
-                <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="movie-grid__image">
+                <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="cartelera__image">
                 `;
                 HomePeliculas.appendChild(movieItem);
 

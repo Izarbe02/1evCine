@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(peliculas => {
             peliculas.forEach(Pelicula => {
                 const movieItem = document.createElement("div");
-                movieItem.classList.add("pelicula"); 
+                movieItem.classList.add("movie-grid__item"); 
                 movieItem.innerHTML = `
                 <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="movie-grid__image">
                 <a href="#" class="movie-grid__button">SABER MÁS</a>
