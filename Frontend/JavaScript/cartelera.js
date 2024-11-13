@@ -25,3 +25,4 @@ document.addEventListener("DOMContentLoaded", function () {
             peliculasContainer.innerHTML = "<p>Error al cargar las películas</p>";
         });
 });
+
