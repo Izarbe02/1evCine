@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sass/build/Checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Patua+One&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Patua+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Checkout Lumiere</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+     <a href="../Html/main.html"><img src="../images/logo.png" alt="Cines Lumiere" class="header__logo"></a>
+    </header>
+    <!-- Body -->
+
+    <body>
+        <div class="checkout">
+            <div class="checkout__title">CHECKOUT</div>
+            <div class="checkout__content">
+                <div class="checkout__order">
+                    <h2 class="checkout__order-title">ORDER</h2>
+                    <p class="checkout__order-text"><br></p>
+                    <p class="checkout__order-text">Seat<br></p>
+                    <p class="checkout__order-text">Payment Method<br></p>
+                    <p class="checkout__order-text">Regular Seat</p>
+                    <p class="checkout__total">Total<br></p>
+                </div>
+                <div class="checkout__payment-methods">
+                    <h2 class="checkout__payment-methods-title">Choose payment methods</h2>
+                    <label class="checkout__payment-methods-label">
+                        <input type="radio" name="payment" value="mastercard" class="checkout__payment-methods-input">
+                        <i class="fab fa-cc-mastercard"></i> Mastercard
+                    </label>
+                    <label class="checkout__payment-methods-label">
+                        <input type="radio" name="payment" value="paypal" class="checkout__payment-methods-input">
+                        <i class="fab fa-cc-paypal"></i> Paypal
+                    </label>
+                    <label class="checkout__payment-methods-label">
+                        <input type="radio" name="payment" value="visa" class="checkout__payment-methods-input">
+                        <i class="fab fa-cc-visa"></i> Visa
+                    </label>
+                </div>
+            </div>
+            <button class="checkout__confirm-button">CONFIRM</button>
+        </div>
+    </body>
+
+</html>
