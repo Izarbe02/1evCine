@@ -1,0 +1,125 @@
+// Variables de color y fuente
+$color-bg: #000000;
+$color-text: #ff0000;
+$color-secondary-bg: #111;
+$color-button-bg: #000000;
+$color-button-text: #ff0000;
+$color-button-border: #ff0000;
+$color-link-hover: #00ffb3;
+$color-footer-bg: rgb(32, 95, 82);
+$color-white: #ffffff;
+$title-font: "Poppins", sans-serif;
+
+@mixin primary-font {
+  font-family: $title-font;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @include primary-font;
+}
+
+// Header
+.header {
+  color: $color-text;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: $color-bg;
+
+  &__logo {
+    height: 60px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: bold;
+    @include primary-font;
+    color: $color-text;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      @include primary-font;
+      color: $color-text;
+    }
+  }
+}
+
+// Pelicula
+
+main{
+    
+}
+ 
+// Footer
+.footer {
+  padding: 16px;
+  text-align: center;
+  background-color: $color-footer-bg;
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: $color-white;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    &__social-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+// Media Query
+@media (min-width: 768px) {
+  .header {
+    padding: 24px;
+
+    &__logo {
+      height: 90px;
+    }
+
+    &__nav {
+      gap: 16px;
+    }
+
+    &__link {
+      font-size: 27px;
+    }
+  }
+
+
+  .footer {
+    &__text {
+      gap: 26px;
+    }
+
+    &__socials {
+      gap: 16px;
+    }
+  }
+}
