@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const HomePeliculas = document.querySelector(".cartelera__images");
 
