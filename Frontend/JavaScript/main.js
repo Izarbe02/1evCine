@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return response.json();
         })
-
+ 
         
         
         .then(peliculas => {

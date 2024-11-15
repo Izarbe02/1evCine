@@ -145,7 +145,7 @@ body {
     text-shadow: 2px 2px 5px rgb(97, 0, 0);
   }
   .movie-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
   }
