@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../sass/build/main.css">
   <script src="../JavaScript/main.js"></script>
+  <script src="../JavaScript/carousel.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Patua+One&display=swap" rel="stylesheet">
@@ -25,11 +26,30 @@
     </nav>
   </header>
 
-  <!-- Imagen Principal -->
-  <section class="main-image">
-    <img src="../images/homeImg.jpg" alt="Imagen de Cines Lumiere" class="main-image__img">
+  <!-- Carrousel -->
+  <section class="carousel">
+    <div class="carousel-container">
+        <figure class="carousel-item">
+            <img src="../Images/carousel1.jpg" alt="Imagen 1">
+        </figure>
+        <figure class="carousel-item">
+            <img src="../Images/carousel2.jpg" alt="Imagen 2">
+        </figure>
+        <figure class="carousel-item">
+            <img src="../Images/carousel3.jpg" alt="Imagen 3">
+        </figure>
+        <figure class="carousel-item">
+          <img src="../Images/homeImg.jpg" alt="Imagen 4">
+      </figure>
+    </div>
     <div class="main-image__text">Cines Lumiere</div>
-  </section>
+    <nav class="carousel-navigation">
+        <button class="nav-button prev-button"><span>&#60;</span></button>
+        <button class="nav-button next-button"><span>&#62;</span></button>
+    </nav>
+</section>
+
+
 
   <!-- Segmento de Cartelera -->
   <section class="cartelera" id="cartelera">

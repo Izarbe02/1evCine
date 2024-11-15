@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const HomePeliculas = document.querySelector(".cartelera__images");
 
@@ -8,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return response.json();
         })
-
+ 
         
         
         .then(peliculas => {

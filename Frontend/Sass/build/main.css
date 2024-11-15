@@ -34,14 +34,71 @@
   color: #ff0000;
 }
 
-.main-image {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+figure {
+  margin: 0;
 }
-.main-image__img {
-  width: 100%;
-  height: auto;
+
+.carousel {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Oculta todas las imágenes por defecto */
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1; /* Muestra solo la imagen activa */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%; /* Asegura que las imágenes llenen el contenedor */
+    object-fit: cover;
+    display: block;
+}
+
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Navegación de la galería */
+.carousel-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-button {
+  background-color: rgba(0,0,0, .3);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.nav-button > span {
+font-size: 30px;
 }
 .main-image__text {
   color: #ff0000;
@@ -61,6 +118,7 @@
   color: #ff0000;
   margin-bottom: 16px;
   font-size: 24px;
+  text-shadow: #ff0000;
 }
 .cartelera__images {
   display: grid;
@@ -136,6 +194,10 @@
   .main-image__text {
     font-size: 70px;
   }
+  .carousel {
+
+    height: 500px;
+}
   .cartelera {
     padding: 32px;
   }
