@@ -1,4 +1,4 @@
-// Variables
+// Variables 
 $font-primary: 'Poppins', sans-serif;
 $font-secondary: 'Patua One', serif;
 $color-primary: #ff0000;
@@ -19,15 +19,16 @@ $breakpoint-tablet: 768px;
   background-color: rgba(0, 0, 0, 0.856);
   color: $color-primary;
   border: 2px solid $color-primary;
-  padding: 8px 16px;
+  padding: 12px 20px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px; 
   transition: all 0.3s ease;
   margin-bottom: 25px;
-
+  border-radius: 5px; 
   &:hover {
     background-color: $color-primary;
     color: $color-secondary;
+    transform: scale(1.2); 
   }
 }
 
@@ -87,6 +88,15 @@ body {
 
 // Main Content
 .pelicula {
+  &__title {
+    font-size: 64px; 
+    color: $color-primary;
+    text-align: center; 
+    margin: 45px 0;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.8); 
+    font-family: $font-primary;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -104,8 +114,10 @@ body {
     margin-bottom: 16px;
   }
 
-  &__subtitle {
+  &__subtitle , &__subtitle__director {
+    margin-top: 10px;
     margin-bottom: 15px;
+    color: #ff0000;
   }
 
   &__par {
@@ -114,11 +126,11 @@ body {
 
   &__image {
     text-shadow: 2px 2px $color-primary;
-    height: auto;
+    height: 500px;
     max-width: 100%;
     border: 2px solid $color-primary;
     margin-bottom: 16px;
-    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7);
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.7); 
   }
 
   &__showtimes, &__sala {
@@ -179,7 +191,7 @@ body {
     padding: 24px;
 
     &__logo {
-      height: 90px;
+      height: 90px; 
       margin-bottom: 0;
     }
 
@@ -200,12 +212,12 @@ body {
     }
 
     &__text {
-      width: 50%;
+      width: 50%; 
       margin-bottom: 0;
     }
 
     &__image {
-      height: 425px;
+      height: 600px; 
       width: auto;
     }
   }
@@ -220,7 +232,7 @@ body {
     bottom: 0;
 
     &__text {
-      gap: 26px;
+      gap: 26px; 
     }
 
     &__socials {
