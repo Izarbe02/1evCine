@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const peliculasContainer = document.querySelector(".main");
+  const params = new URLSearchParams(window.location.search);
+  const idUrl = params.get('id');  
   
-    fetch("https://localhost:7141/api/Pelicula") // Cambia la URL si es necesario
+  const peliculasContainer = document.querySelector(".main");
+  
+    fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) // Cambia la URL si es necesario
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener las películas");
         }
         return response.json();
       })
-      .then((peliculas) => {
-        peliculas.forEach((pelicula) => {
+      .then((pelicula) => {
+       
           const peliculaHTML = `
             <article class="pelicula">
               <section class="pelicula__description">
@@ -39,5 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error:", error);
         peliculasContainer.innerHTML = "<p>Error al cargar las películas</p>";
       });
-  });
+  ;
   
