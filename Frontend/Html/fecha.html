@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../sass/build/pelicula.css">
+  <link rel="stylesheet" href="../sass/build/fecha.css">
   <script src="../JavaScript/main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,42 +29,38 @@
   </header>
   <!-- Main -->
 
-  <main class="main">
-    <article class="pelicula">
-      <section class="pelicula__description">
-        <h1 class="pelicula__title">Pelicula Titulo</h1>
-        <div class="pelicula__content">
-          <img src="../Images/pelicula4.jpg" alt="CartelPelicula" class="pelicula__image">
-          <div class="pelicula__text">
-            <h3 class="pelicula__subtitle">Description</h3>
-            <p class="pelicula__par">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non elementum
-              eros. Nulla vel lorem diam. Proin quis suscipit elit. Vivamus viverra suscipit semper. Vivamus sit amet
-              ante ut ante fermentum lacinia. Praesent pellentesque eleifend mauris id semper. Maecenas eu metus id orci
-              auctor tempus ut ullamcorper lectus. Aliquam posuere at libero vitae scelerisque. Donec fermentum, est ut
-              auctor ultricies, ligula erat auctor velit, nec pretium lectus odio vel eros. Donec metus elit, sodales a
-              scelerisque a, scelerisque eu mauris. Pellentesque quis commodo nunc.</p>
-              <h3 class="pelicula__subtitle__director">Director</h3>
-          </div>
+    <!-- Contenedor principal -->
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <img src="logo.png" alt="Cines Lumiere" class="header__logo">
+      </header>
+  
+      <!-- Título -->
+      <h1 class="container__title">Elija Día y Hora</h1>
+  
+      <!-- Selector de día y hora -->
+      <div class="formulario">
+        <div class="formulario__nav">
+          <button class="formulario__nav-button formulario__nav-button--prev">&larr;</button>
+          <button class="formulario__day-button">Hoy</button>
+          <button class="formulario__nav-button formulario__nav-button--next">&rarr;</button>
         </div>
-
-        
-
-        <div class="section-pelicula__buttons">
-          <div class="pelicula__sala">
-            <button class="pelicula__sala-button">SALA </button>
-            <a href="../Html/fecha.html"> <button class="pelicula__seat-button">Elegir Fecha</button></a>
-          </div>
-         
+  
+        <!-- Horarios -->
+        <div class="formulario__hours">
+          <button class="formulario__hour-button">11:30pm</button>
+          <button class="formulario__hour-button">11:30pm</button>
+          <button class="formulario__hour-button">11:30pm</button>
         </div>
-      
-      <div class="pelicula__seat-button-container">
-      
       </div>
-      </section>
-    
+  
+      <!-- Botón para seleccionar asientos -->
+      <div class="container__seat-selection">
+        <button class="container__seat-button">Seleccione Asientos</button>
+      </div>
     </div>
-    </article>
-  </main>
+
 
   <!-- Footer -->
   <footer class="footer">
