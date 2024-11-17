@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, button, h3, span {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url("../../Images/imgfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  color: #ff0000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background-color: #000000;
+}
+.header__logo {
+  height: 60px;
+  margin-bottom: 16px;
+}
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.header__link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff0000;
+  font-size: 16px;
+}
+.header__link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.asientos-container {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.asientos-container .asiento {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+.asientos-container .asiento.ocupado {
+  background-color: #ce032f;
+  cursor: not-allowed;
+}
+.asientos-container .asiento.disponible {
+  background-color: #10b434;
+  cursor: pointer;
+}
+.asientos-container .asiento.disponible:hover {
+  transform: scale(1.1);
+}
+.asientos-container .asiento.seleccionado {
+  background-color: #1b448f;
+}
+
+.reservar-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1b448f;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.reservar-button:hover {
+  background-color: #1b448f;
+}
+.reservar-button:disabled {
+  background-color: #5a5a5a;
+  cursor: not-allowed;
+}
+
+.footer {
+  color: #ffffff;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(32, 95, 82);
+}
+.footer__text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.footer__socials__social-icon {
+  width: 25px;
+  height: 25px;
+}
+.footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+  }
+  .header__logo {
+    height: 90px;
+    margin-bottom: 0;
+  }
+  .header__nav {
+    flex-direction: row;
+    gap: 16px;
+  }
+  .header__link {
+    font-size: 27px;
+  }
+  .pelicula__content {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .pelicula__text {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  .pelicula__image {
+    height: 600px;
+    width: auto;
+  }
+  .section-pelicula__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer {
+    bottom: 0;
+  }
+  .footer__text {
+    gap: 26px;
+  }
+  .footer__socials {
+    gap: 16px;
+  }
+}
+
+/*# sourceMappingURL=asientos.css.map */
