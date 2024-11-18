@@ -13,12 +13,23 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(sesiones => {
           sesiones.forEach(Sesion => {
-         
-            const sesionHTML = `
+            const sesionItem = document.createElement("div");
+            sesionItem.classList.add("sesion__item"); 
+            sesionItem.innerHTML = `
               <article class="sesiones">
-                <p>${Sesion.fechaHora} </p>
+                 <div class="contSesion">
+                  <p>${Sesion.fechaHora} </p>
+                 </div> 
               </article>`;
-            sesionesContainer.insertAdjacentHTML("beforeend", sesionHTML);
+            sesionesContainer.appendChild(sesionItem);
+
+            const ButtonParaAsientos = sesionItem.querySelector('.contSesion');
+
+                ButtonParaAsientos.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    window.location.href = `asientos.html?id=${Sesion.idSesion}`
+                })
+
           });
         })
         .catch((error) => {
