@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const peliculasContainer = document.querySelector(".main");
 
-  fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) 
+  fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) // Cambia la URL si es necesario
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al obtener las películas");
