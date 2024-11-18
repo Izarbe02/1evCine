@@ -12,63 +12,7 @@ body {
   color: #ffffff;
 }
 
-.header {
-  align-items: center;
-  padding: 16px;
-  background-color: black;
-}
-.header__logo {
-  height: 80px;
-}
 
-.footer {
-  color: white;
-  width: 100%;
-  padding: 16px;
-  text-align: center;
-  background-color: rgb(32, 95, 82);
-}
-.footer__text {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: #ffffff;
-}
-.footer__socials {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-.footer__socials__social-icon {
-  width: 25px;
-  height: 25px;
-}
-.footer a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-@media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 24px;
-  }
-  .header__logo {
-    height: 90px;
-    margin-bottom: 0;
-  }
-  .header__nav {
-    flex-direction: row;
-    gap: 16px;
-  }
-  .header__link {
-    font-size: 27px;
-  }
-}
 .container {
   text-align: center;
   width: 90%;
