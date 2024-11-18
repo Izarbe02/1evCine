@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Obtener el parámetro `id` de la URL
   const params = new URLSearchParams(window.location.search);
   const idUrl = params.get('id'); // ID proporcionado en la URL
 
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Realizar una solicitud `fetch` a la API para obtener las sesiones
-  fetch(`http://localhost:7141/api/Sesion/${idUrl}/sesiones`) // Cambiar a HTTPS si el servidor lo soporta
+  fetch(`https://localhost:7141/api/Sesion/${idUrl}/sesiones`) // Cambiar a HTTPS si el servidor lo soporta
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al obtener las sesiones de la API");
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const hourButton = document.createElement("button");
         hourButton.classList.add("formulario__hour-button");
         hourButton.textContent = Sesion.fechaHora; // Mostrar la hora de la sesión
-
+        hoursContainer.appendChild(hourButton);
         // Agregar un evento de clic para redirigir al selector de asientos
         hourButton.addEventListener("click", (event) => {
           event.preventDefault();
@@ -39,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Agregar el botón al contenedor de horarios
-        hoursContainer.appendChild(hourButton);
+       
       });
     })
     .catch((error) => {

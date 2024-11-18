@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       elegirFecha.addEventListener('click', (event) => {
         event.preventDefault();
-        window.location.href = `sesiones.html?id=${pelicula.id}`
+        window.location.href = `fecha.html?id=${pelicula.id}`
       })
     });
     
