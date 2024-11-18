@@ -14,8 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 movieItem.classList.add("movie-grid__item"); 
                 movieItem.innerHTML = `
                 <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="movie-grid__image">
-                <a href="pelicula.html?id=${Pelicula.id}" class="movie-grid__button">SABER MÁS</a>
+                <a href="#" class="movie-grid__button">SABER MÁS</a>
                 `;
+
+                const saberMasButton = movieItem.querySelector('.movie-grid__button');
+
+                saberMasButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    window.location.href = `pelicula.html?id=${Pelicula.id}`
+                })
+
                 peliculasContainer.appendChild(movieItem);
 
             });
@@ -25,4 +33,3 @@ document.addEventListener("DOMContentLoaded", function () {
             peliculasContainer.innerHTML = "<p>Error al cargar las películas</p>";
         });
 });
-
