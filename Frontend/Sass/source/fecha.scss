@@ -1,100 +1,80 @@
 // Variables
+$font-family: "Poppins", sans-serif;
+$font-family-body: "Patua One", serif;
 $color-primary: #ff0000;
-$color-black: #000000;
-$color-white: #ffffff;
-$font-family: 'Poppins', sans-serif;
-$title-font :'Poppins', sans-serif;
+$color-dark: #000000;
+$color-background: rgba(0, 0, 0, 0.85);
+$background-image: url("../../Images/imgfondo.jpg");
+$border-radius: 10px;
+$transition: transform 0.3s ease, background-color 0.3s ease;
 
-// Reset
+// Estilos globales
 * {
-  font-family: $title-font;
+  font-family: $font-family;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: url('../../Images/imgfondo.jpg') no-repeat center center fixed;
+  font-family: $font-family-body;
+  background: $background-image no-repeat center center fixed;
   background-size: cover;
-  color: $color-white;
+  color: #ffffff;
+  
+  // Usamos Flexbox para centrar el contenido
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Hace que ocupe toda la altura de la ventana
 }
 
-
-
-}
-
-// Media Queries
-@media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 24px;
-
-    &__logo {
-      height: 90px; 
-      margin-bottom: 0;
-    }
-
-    &__nav {
-      flex-direction: row;
-      gap: 16px;
-    }
-
-    &__link {
-      font-size: 27px;
-    }
-  }
-}
-
-// Contenedor principal
+// Contenedor
 .container {
   text-align: center;
   width: 90%;
   max-width: 600px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: $color-background;
   border: 2px solid $color-primary;
-  border-radius: 10px;
-
-  &__title {
-    font-size: 2.5rem;
-    color: $color-primary;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  &__seat-selection {
-    margin-top: 20px;
-
-    .container__seat-button {
-      background: none;
-      color: $color-primary;
-      border: 2px solid $color-primary;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-
-      &:hover {
-        background-color: $color-primary;
-        color: $color-black;
-        transform: scale(1.1); // Expansión al pasar el ratón
-      }
-    }
-  }
+  border-radius: $border-radius;
 }
 
-// Header
-.header {
-  &__logo {
-    display: block;
-    margin: 0 auto 20px;
-    height: 50px;
-  }
+.container__title {
+  font-size: 40px; // 2.5rem = 40px
+  color: $color-primary;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container__seat-selection {
+  margin-top: 20px;
+}
+
+.container__seat-selection .container__seat-button {
+  background: none;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+  padding: 15px 30px;
+  font-size: 19px; // 1.2rem = 19px
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: $transition;
+}
+
+.container__seat-selection .container__seat-button:hover {
+  background-color: $color-primary;
+  color: $color-dark;
+  transform: scale(1.1);
+}
+
+// Logo
+.header__logo {
+  display: block;
+  margin: 0 auto 20px;
+  height: 50px;
 }
 
 // Formulario
@@ -103,68 +83,43 @@ body {
   padding: 20px;
   margin: 20px auto;
   border: 2px solid $color-primary;
-  border-radius: 10px;
+  border-radius: $border-radius;
+}
 
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.formulario__nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
-    &-button {
-      background: none;
-      color: $color-primary;
-      border: 2px solid $color-primary;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+.formulario__nav-button,
+.formulario__day-button,
+.formulario__hour-button {
+  background: none;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+  padding: 10px 20px;
+  font-size: 16px; // 1rem = 16px
+  cursor: pointer;
+  border-radius: 5px;
+  transition: $transition;
+}
 
-      &:hover {
-        background-color: $color-primary;
-        color: $color-black;
-        transform: scale(1.1);
-      }
-    }
-  }
+.formulario__nav-button:hover,
+.formulario__day-button:hover,
+.formulario__hour-button:hover {
+  background-color: $color-primary;
+  color: $color-dark;
+  transform: scale(1.1);
+}
 
-  &__day-button {
-    background: none;
-    color: $color-primary;
-    border: 2px solid $color-primary;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+.formulario__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    &:hover {
-      background-color: $color-primary;
-      color: $color-black;
-      transform: scale(1.1); // Expansión al pasar el ratón
-    }
-  }
-
-  &__hours {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .formulario__hour-button {
-      background: none;
-      color: $color-primary;
-      border: 2px solid $color-primary;
-      padding: 10px 0;
-      font-size: 1.2rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-
-      &:hover {
-        background-color: $color-primary;
-        color: $color-black;
-        transform: scale(1.1); // Expansión al pasar el ratón
-      }
-    }
-  }
+.formulario__hours .formulario__hour-button {
+  padding: 10px 0;
+  font-size: 19px; // 1.2rem = 19px
 }
