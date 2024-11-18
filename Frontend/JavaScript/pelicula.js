@@ -14,6 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((pelicula) => {
 
       const peliculaHTML = `
+  const params = new URLSearchParams(window.location.search);
+  const idUrl = params.get('id');
+
+  const peliculasContainer = document.querySelector(".main");
+
+  fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) // Cambia la URL si es necesario
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al obtener las películas");
+      }
+      return response.json();
+    })
+    .then((pelicula) => {
+
+      const peliculaHTML = `
             <article class="pelicula">
               <section class="pelicula__description">
                 <h1 class="pelicula__title">${pelicula.nombre}</h1>
@@ -28,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="section-pelicula__buttons">
                   <div class="pelicula__sala">
                     <button class="pelicula__sala-button">SALA</button>
+                    <a href="../Html/sesiones.html">
                     <a href="../Html/sesiones.html">
                       <button class="pelicula__seat-button">Elegir Fecha</button>
                     </a>
