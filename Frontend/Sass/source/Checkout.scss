@@ -87,11 +87,18 @@ body {
         border: 5px solid $color-white;
     }
 
-    &__order-title, &__payment-methods-title {
+    &__order-title {
         font-size: clamp(1.8rem, 2.5vw, 2.5rem);
         color: $color-text;
         margin-bottom: 20px;
     }
+
+    &__payment-methods-title {
+        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        color: rgb(196, 247, 242);
+        margin-bottom: 20px;
+    }
+
 
     &__order-text, &__payment-methods-text {
         margin-top: 3%;
@@ -130,6 +137,11 @@ body {
             background-color: $color-text;
             color: $color-bg;
         }
+    }
+
+    .checkout__payment-methods-labelContainer{
+        background-color: rgb(196, 247, 242);
+
     }
 
     &__payment-methods-label {

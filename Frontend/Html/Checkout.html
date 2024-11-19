@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,7 +21,7 @@
 
     <!-- Header -->
     <header class="header">
-     <a href="../Html/main.html"><img src="../images/logo.png" alt="Cines Lumiere" class="header__logo"></a>
+        <a href="../Html/main.html"><img src="../images/logo.png" alt="Cines Lumiere" class="header__logo"></a>
     </header>
     <!-- Body -->
 
@@ -45,18 +44,21 @@
                 </div>
                 <div class="checkout__payment-methods">
                     <h2 class="checkout__payment-methods-title">Choose payment methods</h2>
-                    <label class="checkout__payment-methods-label">
-                        <input type="radio" name="payment" value="mastercard" class="checkout__payment-methods-input">
-                        <i class="fab fa-cc-mastercard"></i> Mastercard
-                    </label>
-                    <label class="checkout__payment-methods-label">
-                        <input type="radio" name="payment" value="paypal" class="checkout__payment-methods-input">
-                        <i class="fab fa-cc-paypal"></i> Paypal
-                    </label>
-                    <label class="checkout__payment-methods-label">
-                        <input type="radio" name="payment" value="visa" class="checkout__payment-methods-input">
-                        <i class="fab fa-cc-visa"></i> Visa
-                    </label>
+                    <div class="checkout__payment-methods-labelContainer">
+                        <label class="checkout__payment-methods-label">
+                            <input type="radio" name="payment" value="mastercard"
+                                class="checkout__payment-methods-input">
+                            <i class="fab fa-cc-mastercard"></i> Mastercard
+                        </label>
+                        <label class="checkout__payment-methods-label">
+                            <input type="radio" name="payment" value="paypal" class="checkout__payment-methods-input">
+                            <i class="fab fa-cc-paypal"></i> Paypal
+                        </label>
+                        <label class="checkout__payment-methods-label">
+                            <input type="radio" name="payment" value="visa" class="checkout__payment-methods-input">
+                            <i class="fab fa-cc-visa"></i> Visa
+                        </label>
+                    </div>
                 </div>
             </div>
             <button class="checkout__confirm-button">CONFIRM</button>

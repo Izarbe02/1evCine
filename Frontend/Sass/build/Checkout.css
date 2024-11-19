@@ -70,9 +70,14 @@ body {
   background-color: #2a6b5b;
   border: 5px solid #ffffff;
 }
-.checkout__order-title, .checkout__payment-methods-title {
+.checkout__order-title {
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   color: #ff0000;
+  margin-bottom: 20px;
+}
+.checkout__payment-methods-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  color: rgb(196, 247, 242);
   margin-bottom: 20px;
 }
 .checkout__order-text, .checkout__payment-methods-text {
@@ -107,6 +112,9 @@ body {
 .checkout__confirm-button:hover {
   background-color: #ff0000;
   color: #000000;
+}
+.checkout .checkout__payment-methods-labelContainer {
+  background-color: rgb(196, 247, 242);
 }
 .checkout__payment-methods-label {
   display: flex;
