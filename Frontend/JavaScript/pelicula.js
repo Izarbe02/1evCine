@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="section-pelicula__buttons">
                   <div class="pelicula__sala">
-                    <button class="pelicula__sala-button">SALA</button>
+                    <button class="pelicula__sala-button"> Sala : ${pelicula.idSala}</button>
                     <a href="../Html/sesiones.html">
                       <button class="pelicula__seat-button">Elegir Fecha</button>
                     </a>
