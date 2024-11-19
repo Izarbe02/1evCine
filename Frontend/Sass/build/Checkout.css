@@ -26,7 +26,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 .checkout__title {
   font-size: clamp(2rem, 4vw, 4rem);
@@ -64,11 +63,10 @@ body {
 .checkout__order {
   background-color: rgb(196, 247, 242);
   border: 10px solid #2a6b5b;
-  color: rgb(5, 49, 38);
+  color: #2a6b5b;
 }
 .checkout__payment-methods {
   background-color: #2a6b5b;
-  border: 5px solid #ffffff;
 }
 .checkout__order-title {
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
@@ -92,17 +90,16 @@ body {
 .checkout__total {
   margin-top: 20px;
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-  font-weight: bold;
   color: #ff0000;
 }
 .checkout__total2 {
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-  font-weight: bold;
   color: #111;
 }
 .checkout__confirm-button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding: 3% 6%;
   background-color: rgba(0, 0, 0, 0.849);
   color: #ff0000;
   border: 2px solid #ff0000;
@@ -115,8 +112,14 @@ body {
 }
 .checkout .checkout__payment-methods-labelContainer {
   background-color: rgb(196, 247, 242);
+  color: #111;
+  padding: 2%;
+  border-radius: 15px;
+  text-align: left;
 }
 .checkout__payment-methods-label {
+  font-size: 20px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
