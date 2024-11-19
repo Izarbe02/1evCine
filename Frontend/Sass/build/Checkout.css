@@ -29,9 +29,9 @@ body {
   height: 100vh;
 }
 .checkout__title {
-  font-size: 36px;
+  font-size: clamp(2rem, 4vw, 4rem);
   font-weight: bold;
-  margin-bottom: 13px;
+  margin-bottom: 10%;
   color: #ff0000;
   border: solid #ff0000;
   background-color: rgba(0, 0, 0, 0.781);
@@ -52,7 +52,7 @@ body {
   }
 }
 .checkout__order, .checkout__payment-methods {
-  padding: 20px;
+  padding: 3%;
   border-radius: 10px;
   width: 100%;
 }
@@ -71,16 +71,29 @@ body {
   border: 5px solid #ffffff;
 }
 .checkout__order-title, .checkout__payment-methods-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   color: #ff0000;
   margin-bottom: 20px;
 }
 .checkout__order-text, .checkout__payment-methods-text {
-  margin: 10px 0;
+  margin-top: 3%;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+}
+.checkout__order-text2 {
+  margin-top: 1%;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  color: #2e2e2e;
 }
 .checkout__total {
-  font-size: 24px;
+  margin-top: 20px;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   font-weight: bold;
   color: #ff0000;
+}
+.checkout__total2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: bold;
+  color: #111;
 }
 .checkout__confirm-button {
   margin-top: 20px;

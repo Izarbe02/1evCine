@@ -1,6 +1,7 @@
 // Variables de color y fuente
 $color-bg: #000000;
 $color-text: #ff0000;
+$color-text2: #2e2e2e;
 $color-secondary-bg: #111;
 $color-button-bg: #000000;
 $color-button-text: #ff0000;
@@ -42,9 +43,9 @@ body {
     height: 100vh;
 
     &__title {
-        font-size: 36px;
+        font-size: clamp(2rem, 4vw, 4rem);
         font-weight: bold;
-        margin-bottom: 13px;
+        margin-bottom: 10%;
         color: $color-text;
         border: solid $color-text;
         background-color: rgba(0, 0, 0, 0.781);
@@ -66,7 +67,7 @@ body {
     }
 
     &__order, &__payment-methods {
-        padding: 20px;
+        padding: 3%;
         border-radius: 10px;
         width: 100%;
 
@@ -87,18 +88,33 @@ body {
     }
 
     &__order-title, &__payment-methods-title {
+        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
         color: $color-text;
         margin-bottom: 20px;
     }
 
     &__order-text, &__payment-methods-text {
-        margin: 10px 0;
+        margin-top: 3%;
+        font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+    }
+
+    &__order-text2{
+        margin-top: 1%;
+        font-size: clamp(1.3rem, 2vw, 2rem);
+        color: $color-text2;
     }
 
     &__total {
-        font-size: 24px;
+        margin-top: 20px;
+        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
         font-weight: bold;
         color: $color-text;
+    }
+
+    &__total2 {
+        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        font-weight: bold;
+        color: $color-secondary-bg;
     }
 
     &__confirm-button {
