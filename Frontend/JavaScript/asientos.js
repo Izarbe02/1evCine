@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const asientosContainer = document.querySelector(".asientos-container");
+    const botonReserva = document.querySelector(".reservar-button");
+    let asientosSeleccionados = [];
 
     const params = new URLSearchParams(window.location.search);
-    const idUrl = params.get('id');  
+    const idUrl = params.get('id');
 
     fetch(`https://localhost:7141/api/Sesion/${idUrl}/asientos`)
         .then(response => {
@@ -14,17 +16,33 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(asientos => {
             asientos.forEach(Asiento => {
 
-            const asientoItem = document.createElement("div");
-            asientoItem.classList.add("asiento");
-            asientoItem.classList.add(Asiento.estaReservado ? "ocupado" : "disponible");
-            
-            asientoItem.innerHTML = `
+                const asientoItem = document.createElement("div");
+                asientoItem.classList.add("asiento");
+                asientoItem.classList.add(Asiento.estaReservado ? "ocupado" : "disponible");
+                asientoItem.dataset.idAsiento = Asiento.idAsiento;
+
+                asientoItem.innerHTML = `
               <article class="asiento">
                  <div class="contSesion">
                   <p>${Asiento.idAsiento} </p>
                  </div> 
               </article>`;
 
+
+
+                // Agregar evento de clic para seleccionar asientos
+                if (!Asiento.estaReservado) {
+                    asientoItem.addEventListener("click", function () {
+                        if (asientoItem.classList.contains("seleccionado")) {
+                            asientoItem.classList.remove("seleccionado");
+                            asientosSeleccionados = asientosSeleccionados.filter(id => id !== Asiento.idAsiento);
+                        } else {
+                            asientoItem.classList.add("seleccionado");
+                            asientosSeleccionados.push(Asiento.idAsiento);
+                        }
+                        console.log("Asientos seleccionados:", asientosSeleccionados);
+                    });
+                }
 
                 asientosContainer.appendChild(asientoItem);
 
@@ -34,5 +52,45 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error:", error);
             asientosContainer.innerHTML = "<p>Error al cargar los asientos</p>";
         });
+
+
+
+    botonReserva.addEventListener("click", function () {
+        if (asientosSeleccionados.length === 0) {
+            alert("No has seleccionado ningún asiento.");
+            return;
+        }
+        console.log("ID de la sesión:", idUrl);
+        if (!idUrl) {
+            console.error("El ID de la sesión no está definido.");
+            return;
+        }
+
+        console.log(asientosSeleccionados.every(id => typeof id === "number"));
+
+        console.log("Cuerpo de la solicitud:", JSON.stringify({ asientosIds: asientosSeleccionados }));
+
+        fetch(`https://localhost:7141/api/Sesion/${idUrl}/asientos/reservar`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(asientosSeleccionados)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error al reservar los asientos");
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.Message || "Asientos reservados con éxito.");
+                //location.reload(); // Recargar la página para actualizar el estado de los asientos
+            })
+            .catch(error => {
+                console.error("Error al reservar los asientos:", error);
+                alert("Hubo un problema al intentar reservar los asientos.");
+            });
+    });
 });
 
