@@ -28,7 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
         // Crear un botón para cada horario
         const hourButton = document.createElement("button");
         hourButton.classList.add("formulario__hour-button");
-        hourButton.textContent = Sesion.fechaHora; // Mostrar la hora de la sesión
+
+        // Cambiar formato fecha
+        const fechaOriginal = Sesion.fechaHora;
+        const fecha = new Date(fechaOriginal);
+        const opcionesDia = { weekday: "long" };
+        const diaSemana = new Intl.DateTimeFormat("es-ES", opcionesDia).format(fecha);
+        const opcionesFecha = { day: "numeric", hour: "2-digit", minute: "2-digit" };
+        const fechaFormateada = new Intl.DateTimeFormat("es-ES", opcionesFecha).format(fecha);
+        const resultado = `${diaSemana.charAt(0).toUpperCase() + diaSemana.slice(1)} ${fechaFormateada}`;
+
+        hourButton.textContent = resultado; // Mostrar la hora de la sesión
         hoursContainer.appendChild(hourButton);
         // Agregar un evento de clic para redirigir al selector de asientos
         hourButton.addEventListener("click", (event) => {
@@ -38,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Agregar el botón al contenedor de horarios
-       
+
       });
     })
     .catch((error) => {
