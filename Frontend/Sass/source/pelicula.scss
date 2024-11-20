@@ -3,7 +3,7 @@ $font-primary: 'Poppins', sans-serif;
 $font-secondary: 'Patua One', serif;
 $color-primary: #ff0000;
 $color-secondary: #000000;
-$color-tertiary: rgb(188, 244, 232);
+$color-tertiary: rgb(239, 255, 254);
 $color-white: #ffffff;
 
 
@@ -115,7 +115,7 @@ body {
   }
 
   &__subtitle , &__subtitle__director {
-    margin-top: 10px;
+    margin-top: 7px;
     margin-bottom: 15px;
     color: #ff0000;
   }
@@ -213,11 +213,12 @@ body {
 
     &__text {
       width: 50%; 
-      margin-bottom: 0;
+      margin-bottom: 30;
+
     }
 
     &__image {
-      height: 600px; 
+      height: 650px; 
       width: auto;
     }
   }
