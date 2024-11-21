@@ -57,8 +57,15 @@ body {
 }
 
 .main {
+  justify-content: center;
   display: flex;
   flex-direction: column;
+}
+
+.main__container--pantalla{
+  margin-top: 50px;
+  background-color: rgb(86, 86, 128);
+  width : 50%;
 }
 
 .asientos-container {

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="pelicula__content">
                   <img src="${pelicula.imagen}" alt="${pelicula.nombre}" class="pelicula__image">
                   <div class="pelicula__text">
-                    <iframe width="580" height="303" src="${pelicula.urlTrailer}"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                    <iframe class="iframe__pelicula" src="${pelicula.urlTrailer}"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
                     <h3 class="pelicula__subtitle">Descripción</h3>
                     <p class="pelicula__par">${pelicula.sinopsis}</p>
                     <h3 class="pelicula__subtitle__director">Director: ${pelicula.duracion}</h3>
