@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hourButton.addEventListener("click", (event) => {
           event.preventDefault();
           // Redirigir a la página de asientos con el ID de la sesión
+          localStorage.setItem("idPelicula", idUrl); 
           window.location.href = `asientos.html?id=${Sesion.idSesion}`;
         });
 

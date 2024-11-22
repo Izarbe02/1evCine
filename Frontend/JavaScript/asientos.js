@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonReserva = document.querySelector(".reservar-button");
     const divAsientosSeleccionados = document.querySelector(".asientos-seleccionados");
     const divPrecio = document.querySelector(".precio-total");
-    let precioTotal = 0; // Variable para llevar el total de precios seleccionados
-    let asientosSeleccionados = []; // Array para guardar los asientos seleccionados
+    let precioTotal = 0; 
+    let asientosSeleccionados = []; 
 
-    // Capturar el ID de la sesión desde la URL
+    
     const params = new URLSearchParams(window.location.search);
-    const idSesion = params.get('id'); // `id` es el identificador de la sesión en la URL
+    const idSesion = params.get('id');
 
     // Fetch para cargar los asientos de la sesión desde la API
     fetch(`https://localhost:7141/api/Sesion/${idSesion}/asientos`)
@@ -59,16 +59,16 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
             console.error("Error:", error);
-            asientosContainer.innerHTML = "<p>Error al cargar los asientos</p>"; // Mostrar error en la UI
+            asientosContainer.innerHTML = "<p>Error al cargar los asientos</p>";
         });
 
     // Función para actualizar la UI con los asientos seleccionados y el precio total
     function actualizarAsientosSeleccionados() {
         if (asientosSeleccionados.length === 0) {
-            divAsientosSeleccionados.style.display = "none"; // Ocultar la información si no hay selección
+            divAsientosSeleccionados.style.display = "none";
             divPrecio.style.display = "none";
         } else {
-            divAsientosSeleccionados.style.display = "block"; // Mostrar la información
+            divAsientosSeleccionados.style.display = "block";
             divPrecio.style.display = "block";
             divAsientosSeleccionados.textContent = `Asientos seleccionados: ${asientosSeleccionados.join(", ")}`;
             divPrecio.textContent = `Precio total: ${precioTotal.toFixed(2)}€`;
@@ -79,16 +79,17 @@ document.addEventListener("DOMContentLoaded", function () {
     botonReserva.addEventListener("click", function () {
         if (asientosSeleccionados.length === 0) {
             alert("No has seleccionado ningún asiento.");
-            return; // Detener la ejecución si no hay asientos seleccionados
+            return; 
         }
 
         // Guardar los datos seleccionados y la ID de sesión en localStorage
-        localStorage.setItem("asientosSeleccionados", JSON.stringify(asientosSeleccionados)); // Array de asientos
-        localStorage.setItem("precioTotal", precioTotal.toFixed(2)); // Precio total
-        localStorage.setItem("idSesion", idSesion); // ID de la sesión
-        localStorage.setItem("idPelicula", 456); // ID de la película (hardcodeado para este ejemplo, ajustar según necesidad)
+        localStorage.setItem("asientosSeleccionados", JSON.stringify(asientosSeleccionados));
+        localStorage.setItem("precioTotal", precioTotal); 
+        localStorage.setItem("idSesion", idSesion); 
+        const idPelicula = localStorage.getItem("idPelicula");
+        localStorage.setItem("idPelicula", idPelicula);
 
         // Redirigir a la página de Checkout con los datos almacenados en localStorage
-        window.location.href = `Checkout.html?id=${idSesion}`;
+        window.location.href = `Checkout.html`;
     });
 });
