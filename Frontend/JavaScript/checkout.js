@@ -11,6 +11,37 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("ID Sesión:", idSesion);
     console.log("ID Película:", idPelicula);
 
+    const checkoutContainer = document.querySelector(".checkout__content")
+
+
+    fetch(`https://localhost:7141/api/Pelicula/${idPelicula}`) // Cambia la URL si es necesario
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al obtener las películas");
+      }
+      return response.json();
+    })
+    .then((pelicula) => {
+
+      checkoutContainer.innerHTML = `
+                  <div class="checkout__order">
+                    <h2 class="checkout__order-title">ORDER</h2>
+                    <p class="checkout__order-text">${pelicula.nombre}</p>
+                    <p class="checkout__order-text">Seat</p>
+                    <p class="checkout__order-text2">${asientos}</p>
+                    <p class="checkout__order-text">Payment Method</p>
+                    <p class="checkout__order-text">Id de la Sesion</p>
+                    <p class="checkout__total2">${pelicula.id}</p>
+                    <p class="checkout__order-text2">Añade un metodo de pago</p>
+                    <p class="checkout__order-text">Tipo de asiento</p>
+                    <p class="checkout__order-text2">Regular Seat</p>
+                    <p class="checkout__total">Total</p>
+                    <p class="checkout__total2">${precioTotal}</p>
+                </div>`;
+
+    });
+
+
     const confirmButton = document.querySelector(".checkout__confirm-button");
 
     // Escuchar el evento de clic en el botón de confirmar
@@ -78,6 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => {
                 console.error("Error en el proceso de reserva:", error);
                 alert("Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo.");
-            });
+                });
+        });
+
     });
-});
+
+
