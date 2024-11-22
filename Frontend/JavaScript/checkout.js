@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             idPelicula,
             idSesion,
             precioReserva: precioTotal,
-            asientos,
+            idAsientosReservados: asientos,
             fechaReserva: new Date().toISOString()
         };
 
