@@ -1,7 +1,3 @@
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const HomePeliculas = document.querySelector(".cartelera__images");
 
@@ -12,9 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return response.json();
         })
- 
-        
-        
         .then(peliculas => {
             peliculas.slice(0, 4).forEach(Pelicula => {
                 const movieItem = document.createElement("a");

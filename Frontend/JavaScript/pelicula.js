@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const peliculasContainer = document.querySelector(".main");
 
-  fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) // Cambia la URL si es necesario
+  fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) 
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al obtener las películas");
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="pelicula__subtitle__director">Genero: ${pelicula.genero}</h3>
                     <h3 class="pelicula__subtitle__director">Fecha de estreno:  ${pelicula.fechaEstreno}</h3>
                     <h3 class="pelicula__subtitle__director">Pegi: ${pelicula.pegi}</h3>
-                    
                   </div>
                 </div>
                 <div class="section-pelicula__buttons">

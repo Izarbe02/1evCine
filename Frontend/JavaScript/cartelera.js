@@ -13,13 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const movieItem = document.createElement("div");
                 movieItem.classList.add("movie-grid__item"); 
                 movieItem.innerHTML = `
-                <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="movie-grid__image">
-                <a href="#" class="movie-grid__button">SABER MÁS</a>
+                    <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="movie-grid__image">
+                    <a href="#" class="movie-grid__button">SABER MÁS</a>
                 `;
 
-                const saberMasButton = movieItem.querySelector('.movie-grid__button');
 
-                saberMasButton.addEventListener('click', (event) => {
+                movieItem.addEventListener('click', (event) => {
                     event.preventDefault();
                     window.location.href = `pelicula.html?id=${Pelicula.id}`
                 })
