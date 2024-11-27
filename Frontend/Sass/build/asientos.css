@@ -1,4 +1,4 @@
-/* Estilos Generales */
+/* Variables */
 * {
   margin: 0;
   padding: 0;
@@ -41,19 +41,16 @@ body {
   background-color: #000000;
   margin-bottom: 20px;
 }
-
 .header__logo {
   height: 60px;
   margin-bottom: 16px;
 }
-
 .header__nav {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
-.header__link {
+.header__nav .header__link {
   text-decoration: none;
   font-weight: bold;
   color: #ff0000;
@@ -65,10 +62,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px; 
-  padding: 10px; 
+  gap: 30px;
+  padding: 10px;
 }
-
 .main__container--pantalla {
   background-color: rgb(86, 86, 128);
   width: 90%;
@@ -83,7 +79,6 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
-
 .asientos-container .asiento {
   width: 38px;
   height: 38px;
@@ -95,59 +90,53 @@ body {
   font-size: 12px;
   transition: transform 0.2s;
 }
-
 .asientos-container .asiento.ocupado {
   background-color: rgb(76, 79, 144);
   cursor: not-allowed;
 }
-
 .asientos-container .asiento.disponible {
   background-color: rgba(0, 7, 1, 0.137254902);
   cursor: pointer;
 }
-
 .asientos-container .asiento.disponible:hover {
   transform: scale(1.1);
 }
-
 .asientos-container .asiento.seleccionado {
   background-color: #19ebbd;
 }
 
 .div__leyenda {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
   align-items: center;
+  padding: 20px;
 }
-
 .div__leyenda p {
   display: flex;
   align-items: center;
   font-size: 16px;
+  color: #ffffff;
+  margin: 5px 0;
 }
-
 .div__leyenda p::after {
-  content: '';
+  content: "";
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   margin-left: 8px;
 }
-
-.div__leyenda .ocupado::after {
+.div__leyenda p.ocupado::after {
   background-color: rgb(76, 79, 144);
 }
-
-.div__leyenda .disponible::after {
-  background-color: rgba(0, 7, 1, 0.137254902); 
+.div__leyenda p.disponible::after {
+  background-color: rgba(0, 7, 1, 0.137254902);
 }
-
 .div__leyenda .seleccionado::after {
-  background-color: #19ebbd; 
+  background-color: #19ebbd;
 }
 
 .reservar-button {
@@ -156,26 +145,22 @@ body {
   border: 2px solid #ff0000;
   padding: 15px 30px;
   font-size: 19px;
-  text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
   align-self: center;
   margin-top: 20px;
 }
-
 .reservar-button:hover {
   background-color: #ff0000;
   color: #000000;
   transform: scale(1.1);
 }
-
 .reservar-button:disabled {
   background-color: #5a5a5a;
   cursor: not-allowed;
 }
 
-.asientos-seleccionados,
-.precio-total {
+.asientos-seleccionados, .precio-total {
   color: #ffffff;
 }
 
@@ -187,7 +172,6 @@ body {
   background-color: rgb(32, 95, 82);
   margin-top: 30px;
 }
-
 .footer__text {
   display: flex;
   justify-content: center;
@@ -195,84 +179,53 @@ body {
   gap: 8px;
   margin-bottom: 16px;
   font-size: 14px;
-  color: #ffffff;
 }
-
 .footer__socials {
   display: flex;
   justify-content: center;
   gap: 8px;
 }
-
 .footer__socials__social-icon {
   width: 25px;
   height: 25px;
 }
-
 .footer a {
   text-decoration: none;
   color: #ffffff;
 }
 
 @media (min-width: 768px) {
-  .header__nav {
-    flex-direction: row;
-    gap: 16px;
-  }
-
   .main__container--pantalla {
     width: 70%;
   }
-
   .asientos-container {
-    grid-template-columns: repeat(8, 50px);
+    grid-template-columns: repeat(6, 50px);
   }
-
-  .asientos-container .asiento{
+  .asientos-container .asiento {
     width: 50px;
     height: 50px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 12px;
-    transition: transform 0.2s;
   }
-
-  .div__leyenda {
-    flex-direction: row;
-    gap: 20px; 
-  }
-
-  .footer__text {
-    font-size: 16px;
-  }
-
   .reservar-button {
-    font-size: 22px; 
+    font-size: 22px;
   }
 }
-
-
 @media (min-width: 1024px) {
   .main__container--pantalla {
     width: 50%;
   }
-
   .asientos-container {
     grid-template-columns: repeat(8, 50px);
   }
-
   .div__leyenda {
     gap: 30px;
   }
-
   .footer__text {
     font-size: 18px;
   }
-
   .reservar-button {
-    font-size: 24px; 
+    font-size: 24px;
   }
 }
+
+/*# sourceMappingURL=asientos.css.map */
