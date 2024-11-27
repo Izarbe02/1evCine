@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("ID Sesión:", idSesion);
     console.log("ID Película:", idPelicula);
 
-    const checkoutContainer = document.querySelector(".checkout__content")
+    const checkoutContainer = document.querySelector(".checkout__order")
 
 
     fetch(`https://localhost:7141/api/Pelicula/${idPelicula}`) // Cambia la URL si es necesario
@@ -24,21 +24,19 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((pelicula) => {
 
       checkoutContainer.innerHTML = `
-                  <div class="checkout__order">
+                  
                     <h2 class="checkout__order-title">ORDER</h2>
-                    <p class="checkout__order-text">${pelicula.nombre}</p>
-                    <p class="checkout__order-text">Seat</p>
+                    <p class="checkout__order-text">Pelicula</p>
+                    <p class="checkout__order-text2">${pelicula.nombre}</p>
+                    <p class="checkout__order-text">Asientos</p>
                     <p class="checkout__order-text2">${asientos}</p>
-                    <p class="checkout__order-text">Payment Method</p>
                     <p class="checkout__order-text">Id de la Sesion</p>
-                    <p class="checkout__total2">${pelicula.id}</p>
+                    <p class="checkout__order-text2">${pelicula.id}</p>
+                    <p class="checkout__order-text">Metodo de pago</p>
                     <p class="checkout__order-text2">Añade un metodo de pago</p>
-                    <p class="checkout__order-text">Tipo de asiento</p>
-                    <p class="checkout__order-text2">Regular Seat</p>
                     <p class="checkout__total">Total</p>
                     <p class="checkout__total2">${precioTotal}</p>
-                </div>`;
-
+                `;
     });
 
 

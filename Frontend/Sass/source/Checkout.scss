@@ -23,6 +23,8 @@ body {
     background: url('../../Images/imgfondo.jpg') no-repeat center center fixed;
     background-size: cover;
     color: $color-white;
+    margin: 0; // Reducir margen externo
+    padding: 0; // Reducir margen interno
 }
 
 .header {
@@ -42,9 +44,9 @@ body {
     justify-content: center;
 
     &__title {
-        font-size: clamp(2rem, 4vw, 4rem);
+        font-size: clamp(1.8rem, 3.5vw, 3.5rem); // Más pequeño en escritorio
         font-weight: bold;
-        margin-bottom: 10%;
+        margin-bottom: 5%; // Reducir márgenes
         color: $color-text;
         border: solid $color-text;
         background-color: rgba(0, 0, 0, 0.781);
@@ -56,12 +58,12 @@ body {
         flex-direction: column;
         align-items: center;
         width: 80%;
-        gap: 25px;
+        gap: 20px; // Reducir espacio entre elementos
 
         @media (min-width: 768px) {
             flex-direction: row;
             justify-content: space-around;
-            gap: 50px;
+            gap: 40px; // Menos espacio en pantallas más grandes
         }
     }
 
@@ -86,48 +88,47 @@ body {
     }
 
     &__order-title {
-        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
         color: $color-text;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     &__payment-methods-title {
-        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
         color: rgb(196, 247, 242);
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
-
 
     &__order-text, &__payment-methods-text {
-        margin-top: 3%;
-        font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+        margin-top: 2%; // Reducir espacio
+        font-size: clamp(1.3rem, 2vw, 2rem);
     }
 
-    &__order-text2{
+    &__order-text2 {
         margin-top: 1%;
-        font-size: clamp(1.3rem, 2vw, 2rem);
+        font-size: clamp(1.1rem, 1.8vw, 1.8rem);
         color: $color-text2;
     }
 
     &__total {
-        margin-top: 20px;
-        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        margin-top: 10px; // Reducir márgenes
+        font-size: clamp(1.5rem, 2vw, 2rem);
         color: $color-text;
     }
 
     &__total2 {
-        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        font-size: clamp(1.5rem, 2vw, 2rem);
         color: $color-secondary-bg;
     }
 
     &__confirm-button {
-        margin-top: 10%;
-        margin-bottom: 10%;
-        padding: 3% 6%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2% 5%;
         background-color: rgba(0, 0, 0, 0.849);
         color: $color-text;
         border: 2px solid $color-text;
-        font-size: 18px;
+        font-size: 16px; // Reducir tamaño del botón
         cursor: pointer;
 
         &:hover {
@@ -136,7 +137,7 @@ body {
         }
     }
 
-    .checkout__payment-methods-labelContainer{
+    .checkout__payment-methods-labelContainer {
         background-color: rgb(196, 247, 242);
         color: #111;
         padding: 2%;
@@ -145,14 +146,81 @@ body {
     }
 
     &__payment-methods-label {
-        font-size: 20px;
-        margin-top: 10px;
+        font-size: 18px; // Reducir tamaño del texto
+        margin-top: 8px;
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     &__payment-methods-input {
-        margin-right: 10px;
+        margin-right: 8px;
+    }
+}
+
+// Media Queries para pantallas grandes
+@media (min-width: 1024px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px; // Reducir padding en escritorio
+
+        &__logo {
+            height: 100px; // Reducir tamaño del logo
+        }
+    }
+
+    .checkout {
+        &__title {
+            font-size: 3rem; // Título más pequeño en escritorio
+            margin-bottom: 3%; // Menor espacio debajo del título
+        }
+
+        &__content {
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 70%;
+            margin: 0 auto;
+            gap: 40px; // Espacio reducido entre bloques
+        }
+
+        &__order, &__payment-methods {
+            width: 35%; // Bloques más compactos
+            padding: 2%; // Menor padding interno
+            border-radius: 10px;
+        }
+
+        &__order-title, &__payment-methods-title {
+            font-size: 2rem; // Títulos más pequeños
+        }
+
+        &__order-text, &__payment-methods-text {
+            font-size: 1.8rem; // Reducir texto
+        }
+
+        &__order-text2 {
+            font-size: 1.5rem;
+        }
+
+        &__total {
+            font-size: 2.2rem; // Total más compacto
+        }
+
+        &__total2 {
+            font-size: 2rem;
+        }
+
+        &__confirm-button {
+            padding: 1.5% 4%;
+            font-size: 18px; // Reducir el tamaño del botón
+        }
+    }
+
+    .checkout__payment-methods-labelContainer {
+        padding: 2%; // Espaciado reducido
+    }
+
+    .checkout__payment-methods-label {
+        font-size: 20px; // Texto ligeramente más pequeño
     }
 }
