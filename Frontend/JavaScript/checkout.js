@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("ID Película:", idPelicula);
 
     const checkoutContainer = document.querySelector(".checkout__order")
-    const selectedPaymentMethod = document.querySelector('input[name="payment"]:checked');
-
 
     fetch(`https://localhost:7141/api/Pelicula/${idPelicula}`)
     .then((response) => {
@@ -40,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmButton = document.querySelector(".checkout__confirm-button");
 
     confirmButton.addEventListener("click", function () {
+        const selectedPaymentMethod = document.querySelector('input[name="payment"]:checked');
         if (!selectedPaymentMethod) {
+            
             alert("Por favor, selecciona un método de pago.");
             return;
         }
