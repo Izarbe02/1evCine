@@ -32,6 +32,7 @@ body {
 .checkout__title {
   font-size: clamp(1.8rem, 3.5vw, 3.5rem);
   font-weight: bold;
+  margin-top: 1%;
   margin-bottom: 5%;
   color: #ff0000;
   border: solid #ff0000;
