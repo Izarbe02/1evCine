@@ -1,19 +1,28 @@
 /* Variables */
+$font-family: "Poppins", sans-serif;
 $color-primary: #ff0000;
 $color-background: rgb(86, 86, 128);
+$color-footer: rgb(32, 95, 82);
+$color-occupied: rgb(76, 79, 144);
+$color-selected: #19ebbd;
+$color-hover: #5a5a5a;
 $color-white: #ffffff;
+$color-black: #000000;
 $border-radius: 5px;
+$transition-duration: 0.2s;
+$padding-default: 16px;
+$font-size-default: 16px;
 
-/* Estilos Generales */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: $font-family;
 }
 
 a, button, h3, span, p {
-  font-family: "Poppins", sans-serif;
+  font-family: $font-family;
   color: $color-white;
 }
 
@@ -43,13 +52,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
-  background-color: #000000;
+  padding: $padding-default;
+  background-color: $color-black;
   margin-bottom: 20px;
 
   &__logo {
     height: 60px;
-    margin-bottom: 16px;
+    margin-bottom: $padding-default;
   }
 
   &__nav {
@@ -61,7 +70,7 @@ body {
       text-decoration: none;
       font-weight: bold;
       color: $color-primary;
-      font-size: 16px;
+      font-size: $font-size-default;
     }
   }
 }
@@ -98,10 +107,10 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    transition: transform 0.2s;
+    transition: transform $transition-duration;
 
     &.ocupado {
-      background-color: rgb(76, 79, 144);
+      background-color: $color-occupied;
       cursor: not-allowed;
     }
 
@@ -115,44 +124,49 @@ body {
     }
 
     &.seleccionado {
-      background-color: #19ebbd;
+      background-color: $color-selected;
     }
   }
 }
 
 .div__leyenda {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
   align-items: center;
+  padding: 20px;
 
   p {
     display: flex;
     align-items: center;
     font-size: 16px;
+    color: $color-white; 
+    margin: 5px 0; 
+  }
+   
 
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin-left: 8px;
-    }
+  p::after {
+    content: '';
+    display: inline-block;
+    width: 18px; 
+    height: 18px; 
+    border-radius: 50%;
+    margin-left: 8px;
+  }
 
-    .ocupado::after {
-      background-color: rgb(76, 79, 144);
-    }
+  p.ocupado::after {
+    background-color: $color-occupied;
+  }
 
-    .disponible::after {
-      background-color: rgba(0, 7, 1, 0.137254902);
-    }
+  p.disponible::after {
+    background-color: rgba(0, 7, 1, 0.137254902);
 
-    .seleccionado::after {
-      background-color: #19ebbd;
-    }
+  }
+
+  .seleccionado::after {
+    background-color: $color-selected;
   }
 }
 
@@ -162,7 +176,7 @@ body {
   border: 2px solid $color-primary;
   padding: 15px 30px;
   font-size: 19px;
-  text-transform: uppercase;
+
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
   align-self: center;
@@ -170,12 +184,12 @@ body {
 
   &:hover {
     background-color: $color-primary;
-    color: #000000;
+    color: $color-black;
     transform: scale(1.1);
   }
 
   &:disabled {
-    background-color: #5a5a5a;
+    background-color: $color-hover;
     cursor: not-allowed;
   }
 }
@@ -187,9 +201,9 @@ body {
 .footer {
   color: $color-white;
   width: 100%;
-  padding: 16px;
+  padding: $padding-default;
   text-align: center;
-  background-color: rgb(32, 95, 82);
+  background-color: $color-footer;
   margin-top: 30px;
 
   &__text {
