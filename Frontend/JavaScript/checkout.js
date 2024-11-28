@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Reserva:", reserva);
 
         fetch(`https://localhost:7141/api/Sesion/${idSesion}/asientos/reservar`, {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
