@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 movieItem.innerHTML = `
                 <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="cartelera__image">
                 `;
+
+                movieItem.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    window.location.href = `pelicula.html?id=${Pelicula.id}`
+                })
                 HomePeliculas.appendChild(movieItem);
 
             });
