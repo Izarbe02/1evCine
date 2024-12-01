@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hourButton.addEventListener("click", (event) => {
           event.preventDefault();
           localStorage.setItem("idPelicula", idUrl);
-          window.location.href = `asientos.html?id=${Sesion.idSesion}`;
+          window.location.href = `asientos?id=${Sesion.idSesion}`;
         });
       });
     })
