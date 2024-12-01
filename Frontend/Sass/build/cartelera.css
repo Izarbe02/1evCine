@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url("../../Images/imgfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  color: #ff0000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #000000;
+}
+.header__logo {
+  height: 60px;
+}
+.header__nav {
+  display: flex;
+  gap: 8px;
+}
+.header__link {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ff0000;
+  font-size: 16px;
+}
+.header__link a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ff0000;
+}
+
+.footer {
+  bottom: 0;
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(32, 95, 82);
+}
+.footer__text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: white;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.footer__socials__social-icon {
+  width: 25px;
+  height: 25px;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+  padding: 20px;
+}
+.main__title {
+  border-color: solid #ff0000;
+  background-color: rgba(0, 0, 0, 0.88);
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff0000;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 10px;
+}
+
+.movie-grid {
+  margin-top: 25px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+.movie-grid__item {
+  position: relative;
+}
+.movie-grid__item:hover .movie-grid__image {
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7);
+  border: 3px solid #ff0000;
+}
+.movie-grid__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.movie-grid__button {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.856);
+  color: #ff0000;
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.movie-grid__button:hover {
+  background-color: #ff0000;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 24px;
+  }
+  .header__logo {
+    height: 90px;
+  }
+  .header__nav {
+    gap: 16px;
+  }
+  .header__link {
+    font-size: 27px;
+  }
+  .main__title {
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 5px rgb(97, 0, 0);
+  }
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  .movie-grid__image {
+    height: 430px;
+  }
+  .movie-grid__button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .footer {
+    bottom: 0;
+  }
+  .footer__text, .footer__socials {
+    gap: 16px;
+  }
+}
+
+/*# sourceMappingURL=cartelera.css.map */

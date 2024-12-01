@@ -1,0 +1,211 @@
+// Variables
+$primary-color: #ff0000;
+$secondary-color: #000000;
+$footer-bg-color: rgb(32, 95, 82);
+$white: white;
+$shadow-color: rgba(0, 0, 0, 0.7);
+
+
+
+$color-white: #ffffff;
+$title-font: "Poppins", sans-serif;
+@mixin primary-font {
+    font-family: $title-font;
+  }
+  
+
+// Mixin para transiciones
+@mixin transition($property, $duration) {
+    transition: $property $duration ease;
+}
+
+// Estilos globales
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url('../../Images/imgfondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+// Header
+.header {
+    color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: $secondary-color;
+  
+    &__logo {
+      height: 60px;
+    }
+  
+    &__nav {
+      display: flex;
+      gap: 8px;
+    }
+  
+    &__link {
+      text-decoration: none;
+      font-weight: bold;
+      @include primary-font;
+      color: $primary-color;
+      font-size: 16px;
+  
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        @include primary-font;
+        color: $primary-color;
+      }
+    }
+  }
+
+.footer {
+    bottom: 0;
+    padding: 16px;
+    text-align: center;
+    background-color: $footer-bg-color;
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: $white;
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+
+        &__social-icon {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;  
+    }
+}
+
+.main {
+    padding: 20px; 
+
+    &__title {
+        border-color: solid $primary-color;
+        background-color: rgba(0, 0, 0, 0.88);
+        font-size: 24px;
+        text-align: center; 
+        margin-bottom: 30px; 
+        color: $primary-color; 
+        text-shadow: 2px 2px 5px $shadow-color; 
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.movie-grid {
+    margin-top: 25px;
+    display: grid; 
+    gap: 20px; 
+    grid-template-columns: 1fr; 
+    justify-items: center; 
+    margin-bottom: 30px;
+
+    &__item {
+        position: relative; 
+        
+        &:hover .movie-grid__image {
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7); 
+            border: 3px solid $primary-color; 
+        }
+    }
+
+    &__image {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        display: block; 
+        border-radius: 5px; 
+        @include transition(box-shadow, 0.3s); 
+    }
+
+    &__button {
+        display: block; 
+        margin-top: 15px; 
+        text-align: center; 
+        background-color: rgba(0, 0, 0, 0.856); 
+        color: $primary-color; 
+        border-radius: 5px; 
+        border: 2px solid $primary-color;
+        padding: 8px 16px;
+        text-decoration: none; 
+        font-size: 14px;
+        @include transition(all, 0.3s); 
+
+        &:hover {
+            background-color: $primary-color; 
+            color: $secondary-color; 
+        }
+    }
+}
+
+// Media Query
+@media (min-width: 768px) {
+    .header {
+        padding: 24px;
+    
+        &__logo {
+          height: 90px;
+        }
+    
+        &__nav {
+          gap: 16px;
+        }
+    
+        &__link {
+          font-size: 27px;
+        }
+      }
+    .main__title {
+        font-size: 40px;
+        margin-bottom: 50px;
+        text-shadow: 2px 2px 5px rgb(97, 0, 0); 
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 50px;
+
+        &__image {
+            height: 430px;
+        }
+
+        &__button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    }
+
+    .footer {
+        bottom: 0;
+        &__text, &__socials {
+            gap: 16px;
+        }
+    }
+}

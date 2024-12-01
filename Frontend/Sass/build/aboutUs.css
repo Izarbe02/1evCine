@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-image: url("../../Images/imgfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.header {
+  color: #ff0000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #000000;
+}
+.header__logo {
+  height: 85px;
+}
+.header__nav {
+  display: flex;
+  gap: 8px;
+}
+.header__link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff0000;
+  font-size: x-large;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.main-title {
+  color: #000000;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 20px;
+}
+
+.main-section {
+  padding: 42px;
+  width: 85%;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.82);
+  border: 2px solid #ff0000;
+}
+.main-section__text {
+  font-family: "Patua One", serif;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.main-section__quote {
+  color: #ff0000;
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(32, 95, 82);
+}
+.footer__text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.footer__text a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.footer__socials__social-icon {
+  width: 25px;
+  height: 25px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 24px;
+  }
+  .header__nav {
+    gap: 16px;
+  }
+  .main-title {
+    font-size: 32px;
+  }
+  .main-section {
+    width: 65%;
+  }
+  .main-section__text {
+    font-size: 18px;
+  }
+  .main-section__quote {
+    font-size: 22px;
+  }
+  .footer__text {
+    gap: 16px;
+  }
+  .footer__socials {
+    gap: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    padding: 32px;
+  }
+  .header__nav {
+    gap: 24px;
+  }
+  .main-title {
+    font-size: 40px;
+  }
+  .main-section {
+    max-width: 800px;
+  }
+  .main-section__text {
+    font-size: 25px;
+  }
+  .main-section__quote {
+    font-size: 50px;
+  }
+}
+
+/*# sourceMappingURL=aboutUs.css.map */

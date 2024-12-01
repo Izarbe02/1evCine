@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  color: #ff0000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #000000;
+}
+.header__logo {
+  height: 60px;
+}
+.header__nav {
+  display: flex;
+  gap: 8px;
+}
+.header__link {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ff0000;
+  font-size: 16px;
+}
+.header__link a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ff0000;
+}
+
+figure {
+  margin: 0;
+}
+
+.carousel {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Oculta todas las imágenes por defecto */
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1; /* Muestra solo la imagen activa */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%; /* Asegura que las imágenes llenen el contenedor */
+    object-fit: cover;
+    display: block;
+}
+
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Navegación de la galería */
+.carousel-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-button {
+  background-color: rgba(0,0,0, .3);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.nav-button > span {
+font-size: 30px;
+}
+.main-image__text {
+  color: #ff0000;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cartelera {
+  padding: 16px;
+  background-color: #111;
+}
+.cartelera__title {
+  color: #ff0000;
+  margin-bottom: 16px;
+  font-size: 24px;
+  text-shadow: #ff0000;
+}
+.cartelera__images {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+}
+.cartelera__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.3s ease;
+}
+.cartelera__image:hover {
+  transform: scale(1.1);
+  border: 3px solid #ff0000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.cartelera__button-container {
+  margin-top: 16px;
+  text-align: left;
+}
+.cartelera__button {
+  padding: 8px 16px;
+  background-color: #000000;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(32, 95, 82);
+}
+.footer__text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.footer__socials__social-icon {
+  width: 25px;
+  height: 25px;
+}
+.footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 24px;
+  }
+  .header__logo {
+    height: 90px;
+  }
+  .header__nav {
+    gap: 16px;
+  }
+  .header__link {
+    font-size: 27px;
+  }
+  .main-image__text {
+    font-size: 70px;
+  }
+  .carousel {
+
+    height: 500px;
+}
+  .cartelera {
+    padding: 32px;
+  }
+  .cartelera__title {
+    font-size: 55px;
+    margin-bottom: 70px;
+  }
+  .cartelera__images {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+  }
+  .cartelera__image {
+    width: 90%;
+  }
+  .cartelera__button {
+    margin-top: 50px;
+    height: 50px;
+    width: 180px;
+    font-size: x-large;
+  }
+  .footer__text {
+    gap: 26px;
+  }
+  .footer__socials {
+    gap: 16px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

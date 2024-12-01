@@ -1,0 +1,215 @@
+// Variables de color y fuente
+$color-bg: #000000;
+$color-text: #ff0000;
+$color-secondary-bg: #111;
+$color-button-bg: #000000;
+$color-button-text: #ff0000;
+$color-button-border: #ff0000;
+$color-link-hover: #00ffb3;
+$color-footer-bg: rgb(32, 95, 82);
+$color-white: #ffffff;
+$title-font: "Poppins", sans-serif;
+
+@mixin primary-font {
+  font-family: $title-font;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @include primary-font;
+}
+
+// Header
+.header {
+  color: $color-text;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: $color-bg;
+
+  &__logo {
+    height: 60px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: bold;
+    @include primary-font;
+    color: $color-text;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      @include primary-font;
+      color: $color-text;
+    }
+  }
+}
+
+// Imagen Principal
+.main-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__text {
+    color: $color-text;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+// Cartelera
+.cartelera {
+  padding: 16px;
+  background-color: $color-secondary-bg;
+
+  &__title {
+    color: $color-text;
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+
+  &__images {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      border: 3px solid $color-text;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  }
+
+  &__button-container {
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  &__button {
+    padding: 8px 16px;
+    background-color: $color-button-bg;
+    color: $color-button-text;
+    border: 2px solid $color-button-border;
+    cursor: pointer;
+    @include primary-font;
+  }
+}
+
+// Footer
+.footer {
+  padding: 16px;
+  text-align: center;
+  background-color: $color-footer-bg;
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: $color-white;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    &__social-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+// Media Query
+@media (min-width: 768px) {
+  .header {
+    padding: 24px;
+
+    &__logo {
+      height: 90px;
+    }
+
+    &__nav {
+      gap: 16px;
+    }
+
+    &__link {
+      font-size: 27px;
+    }
+  }
+
+  .main-image__text {
+    font-size: 70px;
+  }
+
+  .cartelera {
+    padding: 32px;
+
+    &__title {
+      font-size: 55px;
+      margin-bottom: 70px;
+      
+    }
+
+    &__images {
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-between;
+    }
+
+    &__image{
+       width: 90%;
+    }
+    &__button{
+      margin-top: 50px;
+      height: 50px;
+      width: 180px;
+      font-size: x-large;
+    }
+  }
+
+  .footer {
+    &__text {
+      gap: 26px;
+    }
+
+    &__socials {
+      gap: 16px;
+    }
+  }
+}
