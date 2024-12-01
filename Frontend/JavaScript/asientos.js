@@ -86,6 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("idPelicula", idPelicula);
 
         // Redirigir a checkout con los datos del LocalStorage
-        window.location.href = `Checkout.html`;
+        window.location.href = `Checkout`;
     });
 });
