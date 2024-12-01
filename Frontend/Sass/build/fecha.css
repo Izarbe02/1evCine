@@ -1,0 +1,91 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Patua One", serif;
+  background: url("../../Images/imgfondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid #ff0000;
+}
+.container__title {
+  font-size: 40px;
+  color: #ff0000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.container__seat-selection {
+  margin-top: 20px;
+}
+.container__seat-selection .container__seat-button {
+  background: none;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 15px 30px;
+  font-size: 19px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.container__seat-selection .container__seat-button:hover {
+  background-color: #ff0000;
+  color: #000000;
+  transform: scale(1.1);
+}
+
+.header__logo {
+  display: block;
+  margin: 0 auto 20px;
+  height: 50px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  border: 2px solid #ff0000;
+}
+.formulario__nav {
+  margin-bottom: 20px;
+}
+.formulario-button, .formulario__day-button, .formulario__hour-button {
+  background: none;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.formulario-button:hover, .formulario__day-button:hover, .formulario__hour-button:hover {
+  background-color: #ff0000;
+  color: #000000;
+  transform: scale(1.1);
+}
+.formulario__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=fecha.css.map */

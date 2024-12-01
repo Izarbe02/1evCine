@@ -1,0 +1,247 @@
+// Variables 
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Patua One', serif;
+$color-primary: #ff0000;
+$color-secondary: #000000;
+$color-tertiary: rgb(239, 255, 254);
+$color-white: #ffffff;
+
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.856);
+  color: $color-primary;
+  border: 2px solid $color-primary;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px; 
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  border-radius: 5px; 
+  &:hover {
+    background-color: $color-primary;
+    color: $color-secondary;
+    transform: scale(1.2); 
+  }
+}
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Typography
+a, button, h3, span {
+  font-family: $font-primary;
+}
+
+// Body
+body {
+  background-image: url("../../Images/imgfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+// Header
+.header {
+  color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background-color: $color-secondary;
+
+  &__logo {
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: bold;
+    color: $color-primary;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: $color-primary;
+    }
+  }
+}
+
+
+
+
+// Main Content
+.pelicula {
+  &__title {
+
+    font-size: 64px; 
+    color: $color-primary;
+    text-align: center; 
+    margin: 45px 0;
+    text-shadow: 2px 2px 4px rgba(46, 4, 4, 0.8); 
+    font-family: $font-primary;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+
+  &__text {
+    font-family: $font-secondary;
+    background-color: rgba(0, 0, 0, 0.88);
+    border: solid $color-tertiary;
+    padding: 10px 17px;
+    border-width: 1.5px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle , &__subtitle__director {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    color: #ff0000;
+  }
+
+  &__par {
+    color: $color-tertiary;
+  }
+
+  &__image {
+    text-shadow: 2px 2px $color-primary;
+    height: 500px;
+    max-width: 100%;
+    border: 2px solid $color-primary;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.7); 
+  }
+
+  &__showtimes, &__sala {
+    button {
+      margin-left: 15px;
+    }
+  }
+
+  &__time-button, &__seat-button, &__sala-button {
+    @include button-style;
+  }
+}
+
+.section-pelicula__button {
+  @include flex-center;
+}
+
+// Footer
+.footer {
+  color: $color-white;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(32, 95, 82);
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: $color-white;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    &__social-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+
+    &__logo {
+      height: 90px; 
+      margin-bottom: 0;
+    }
+
+    &__nav {
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    &__link {
+      font-size: 27px;
+    }
+  }
+
+  .pelicula {
+    &__content {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &__text {
+      width: 50%; 
+      margin-bottom: 30;
+
+    }
+
+    &__image {
+      height: 650px; 
+      width: auto;
+    }
+  }
+
+  .section-pelicula__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer {
+    bottom: 0;
+
+    &__text {
+      gap: 26px; 
+    }
+
+    &__socials {
+      gap: 16px;
+    }
+  }
+}
