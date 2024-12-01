@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="section-pelicula__buttons">
                   <div class="pelicula__sala">
                     <button class="pelicula__sala-button"> Sala : ${pelicula.idSala}</button>
-                    <a href="../Html/sesiones.html">
+                    <a href="/html/sesiones">
                       <button class="pelicula__seat-button">Elegir Fecha</button>
                     </a>
                   </div>
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       elegirFecha.addEventListener('click', (event) => {
         event.preventDefault();
-        window.location.href = `fecha.html?id=${pelicula.id}`
+        window.location.href = `fecha?id=${pelicula.id}`
       })
     });
     
