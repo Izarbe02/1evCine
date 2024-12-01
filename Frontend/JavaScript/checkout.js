@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("Reserva confirmada con éxito:", data);
                 alert("Reserva confirmada con éxito. ¡Gracias por tu compra!");
                 localStorage.clear();
-                window.location.href = "compraFinalizada.html";
+                window.location.href = "compraFinalizada";
             })
             .catch(error => {
                 console.error("Error en el proceso de reserva:", error);
