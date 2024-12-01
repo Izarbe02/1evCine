@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(peliculas => {
             peliculas.slice(0, 4).forEach(Pelicula => {
                 const movieItem = document.createElement("a");
-                movieItem.href= "../Html/cartelera.html"
+                movieItem.href= "/html/cartelera"
                 movieItem.innerHTML = `
                 <img src="${Pelicula.imagen}" alt="${Pelicula.nombre}" class="cartelera__image">
                 `;
 
                 movieItem.addEventListener('click', (event) => {
                     event.preventDefault();
-                    window.location.href = `pelicula.html?id=${Pelicula.id}`
+                    window.location.href = `pelicula?id=${Pelicula.id}`
                 })
                 HomePeliculas.appendChild(movieItem);
 
