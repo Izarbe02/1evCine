@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /* global fetch, localStorage */
     const asientos = JSON.parse(localStorage.getItem("asientosSeleccionados"));
     const precioTotal = parseInt(localStorage.getItem("precioTotal"));
     const idSesion = parseInt(localStorage.getItem("idSesion"));
     const idPelicula = parseInt(localStorage.getItem("idPelicula"));
-
+    
     console.log("Asientos:", asientos);
     console.log("Precio Total:", precioTotal);
     console.log("ID Sesión:", idSesion);
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const checkoutContainer = document.querySelector(".checkout__order")
 
-    fetch(`https://localhost:7141/api/Pelicula/${idPelicula}`)
+    fetch(`http://34.225.199.154:7141/api/Pelicula/${idPelicula}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al obtener las películas");
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("Reserva:", reserva);
 
-        fetch(`https://localhost:7141/api/Sesion/${idSesion}/asientos/reservar`, {
+        fetch(`http://34.225.199.154:7141/api/Sesion/${idSesion}/asientos/reservar`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 console.log("Asientos reservados con éxito:", data);
                 console.log("Cuerpo de la solicitud:", JSON.stringify(reserva, null, 2));
-                return fetch(`https://localhost:7141/api/Reserva`, {
+                return fetch(`http://34.225.199.154:7141/api/Reserva`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("Reserva confirmada con éxito:", data);
                 alert("Reserva confirmada con éxito. ¡Gracias por tu compra!");
                 localStorage.clear();
-                window.location.href = "compraFinalizada.html";
+                window.location.href = "compraFinalizada";
             })
             .catch(error => {
                 console.error("Error en el proceso de reserva:", error);

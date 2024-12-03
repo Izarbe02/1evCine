@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Referencias al DOM y variables
+    /* global fetch, localStorage */
     const asientosContainer = document.querySelector(".asientos-container");
     const botonReserva = document.querySelector(".reservar-button");
     const divAsientosSeleccionados = document.querySelector(".asientos-seleccionados");
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const idSesion = params.get('id');
 
 
-    fetch(`https://localhost:7141/api/Sesion/${idSesion}/asientos`)
+    fetch(`http://34.225.199.154:7141/api/Sesion/${idSesion}/asientos`)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error al obtener los asientos");
@@ -86,6 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("idPelicula", idPelicula);
 
         // Redirigir a checkout con los datos del LocalStorage
-        window.location.href = `Checkout.html`;
+        window.location.href = `Checkout`;
     });
 });

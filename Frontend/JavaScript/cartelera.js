@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const peliculasContainer = document.querySelector(".movie-grid");
-
-    fetch("https://localhost:7141/api/Pelicula")
+    /* global fetch, localStorage */
+    fetch("http://34.225.199.154:7141/api/Pelicula")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error al obtener las películas");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 movieItem.addEventListener('click', (event) => {
                     event.preventDefault();
-                    window.location.href = `pelicula.html?id=${Pelicula.id}`
+                    window.location.href = `pelicula?id=${Pelicula.id}`
                 })
 
                 peliculasContainer.appendChild(movieItem);

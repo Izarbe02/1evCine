@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  /* global fetch, localStorage */
   const params = new URLSearchParams(window.location.search);
   const idUrl = params.get('id');
 
   const hoursContainer = document.querySelector(".formulario__hours");
 
-  fetch(`https://localhost:7141/api/Sesion/${idUrl}/sesiones`)
+  fetch(`http://34.225.199.154:7141/api/Sesion/${idUrl}/sesiones`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al obtener las sesiones de la API");
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hourButton.addEventListener("click", (event) => {
           event.preventDefault();
           localStorage.setItem("idPelicula", idUrl);
-          window.location.href = `asientos.html?id=${Sesion.idSesion}`;
+          window.location.href = `asientos?id=${Sesion.idSesion}`;
         });
       });
     })

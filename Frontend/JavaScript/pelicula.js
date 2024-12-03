@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const idUrl = params.get('id');
 
   const peliculasContainer = document.querySelector(".main");
-
-  fetch(`https://localhost:7141/api/Pelicula/${idUrl}`) 
+  /* global fetch, localStorage */
+  fetch(`http://34.225.199.154:7141/api/Pelicula/${idUrl}`) 
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error al obtener las películas");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="section-pelicula__buttons">
                   <div class="pelicula__sala">
                     <button class="pelicula__sala-button"> Sala : ${pelicula.idSala}</button>
-                    <a href="../Html/sesiones.html">
+                    <a href="sesiones">
                       <button class="pelicula__seat-button">Elegir Fecha</button>
                     </a>
                   </div>
@@ -48,14 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       elegirFecha.addEventListener('click', (event) => {
         event.preventDefault();
-        window.location.href = `fecha.html?id=${pelicula.id}`
+        window.location.href = `fecha?id=${pelicula.id}`
       })
     });
     
 })
   
-
-.catch((error) => {
-  console.error("Error:", error);
-  peliculasContainer.innerHTML = "<p>Error al cargar las películas</p>";
-});
